@@ -22,6 +22,7 @@ Route::post('login', 'UserCredentialController@login');
 Route::post('changePass', 'UserCredentialController@changePassword');
 Route::post('createProject', 'MasterDataController@saveProject');
 Route::get('projectList', 'MasterDataController@getAllProjectLists');
+Route::post('createMaterial', 'MasterDataController@saveMaterial');
 
 
 

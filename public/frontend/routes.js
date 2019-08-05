@@ -137,4 +137,23 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
+    .state('material', {
+        url: "/material",
+        templateUrl: "/material",
+        data: {pageTitle: 'Material'},
+        controller: "MaterialController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/MaterialController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
 }]);

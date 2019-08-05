@@ -41,7 +41,7 @@
 						<li><a href="">Vendor</a></li>
 						<li><a href="">Customer</a></li>
 						<li><a ui-sref="project">Project</a></li>
-						<li><a href="">Metarial</a></li>
+						<li><a ui-sref="material">Metarial</a></li>
 					</ul>
 				</li>
 				<li><a ui-sref="requsition">Requsition</a></li>

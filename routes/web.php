@@ -42,6 +42,11 @@ Route::get('/projectList', function () {
 	return view('projectList');
 });
 
+Route::get('/material', function () {
+	return view('material_master');
+});
+
+
 Route::get('login/logout', function () {
 	return (String)view('logout_view');
 });

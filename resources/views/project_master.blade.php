@@ -16,7 +16,7 @@
 
 		<div class="row">  
 			<div class="label-design">
-				<label for="fname">Project Location</label>
+				<label for="location">Project Location</label>
 			</div>     
 			<div class="col-75">				        
 				<input type="text"  name="location" ng-model="projectInfo.location" placeholder="">
@@ -25,7 +25,7 @@
 
 		<div class="row">  
 			<div class="label-design">
-				<label for="fname">Description</label>
+				<label for="desc">Description</label>
 			</div>     
 			<div class="col-75">				        
 				<input type="text"  name="desc" ng-model="projectInfo.desc" placeholder="">
