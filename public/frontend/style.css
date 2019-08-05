@@ -53,6 +53,12 @@ input[type=submit]:hover {
   margin-top:5%;
 }
 
+.table-head {
+  padding-top: 10px; 
+  margin-right: 15px;
+  text-align: center;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";

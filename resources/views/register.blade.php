@@ -1,4 +1,4 @@
-<h3 class="head header-text">User Creation</h3>
+<h3 class="head table-head">User Creation</h3>
 
 <div>
 	<form id="register-form" class="form-horizontal" name="userRegistrationForm" novalidate>

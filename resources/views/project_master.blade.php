@@ -51,11 +51,3 @@
 	</pre> -->
 </div>
 
-
-
-
-
-
-<!-- <button type="button" class="btn btn-default" aria-label="Left Align">
-	<span class="fa fa-trash-o fa-lg" aria-hidden="true">&nbsp;Delete</span>
-</button> -->
