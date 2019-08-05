@@ -112,9 +112,25 @@ var ErpApp = angular.module("ErpApp", [
 
  		}
 
+ 		$rootScope.getAllMaterialList = function(){
+
+ 			$http({
+ 				method: 'get',
+ 				url: 'api/materialList',
+ 			}).then(function (response) {
+ 				$rootScope.materialList = response.data.data;
+
+ 			}, function (response) {
+
+
+ 			});
+
+ 		}
+
  		$rootScope.logOut= function(){
  			window.location.href = 'login/logout/';
  		}
 
  		$rootScope.getAllProjectList();
+ 		$rootScope.getAllMaterialList();
  	}]);

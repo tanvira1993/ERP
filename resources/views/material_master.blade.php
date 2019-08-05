@@ -21,8 +21,8 @@
 			<div class="col-75">				        
 				<select name="type" ng-model="materialInfo.type" class="form-control">
 					<option value="">Select Type</option>
-					<option value="1">Asset</option>
-					<option value="0">Normal</option>
+					<option value="Asset">Asset</option>
+					<option value="Normal">Normal</option>
 					
 				</select>
 			</div>
@@ -44,7 +44,7 @@
 	<div class="row" style="position: relative; left: 470px;top: -286px;">
 		<div class="container">
 			<div class="row">
-				<button ui-sref="" class="btn btn-warning">
+				<button ui-sref="materialList" class="btn btn-warning">
 					Material List
 					<i class="fa fa-server"></i>
 				</button>

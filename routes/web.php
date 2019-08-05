@@ -46,6 +46,9 @@ Route::get('/material', function () {
 	return view('material_master');
 });
 
+Route::get('/materialList', function () {
+	return view('materialList');
+});
 
 Route::get('login/logout', function () {
 	return (String)view('logout_view');

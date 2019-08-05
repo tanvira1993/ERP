@@ -91,7 +91,7 @@ class MasterDataController extends Controller
 		$messages = [
 			'name.required' => 'Name is required!',
 			'name.unique' => 'This Material already created.',			
-			'type.required' => 'Material Type is required!',
+			'type.required' => 'Select Material Type!',
 
 		];
 
@@ -137,7 +137,7 @@ class MasterDataController extends Controller
 
 	public function getAllMaterialLists()
 	{
-		$projects = Materials::select('materials.*')->get();
+		$material = Materials::select('materials.*')->get();
 		return Response::json(['success' => true, 'data' => $material], 200);
 	}
 
