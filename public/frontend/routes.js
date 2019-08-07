@@ -213,4 +213,61 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
+.state('customerList', {
+        url: "/customerList",
+        templateUrl: "/customerList",
+        data: {pageTitle: 'Customer List'},
+        controller: "CustomerListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/CustomerListController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+.state('vendorList', {
+        url: "/vendorList",
+        templateUrl: "/vendorList",
+        data: {pageTitle: 'Vendor List'},
+        controller: "VendorListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/VendorListController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+.state('purchaseOrder', {
+        url: "/purchaseOrder",
+        templateUrl: "/purchaseOrder",
+        data: {pageTitle: 'Purchase Order'},
+        controller: "PurchaseOrderController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/PurchaseOrderController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
 }]);

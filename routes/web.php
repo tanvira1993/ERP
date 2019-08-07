@@ -58,8 +58,21 @@ Route::get('/customer', function () {
 	return view('customer_master');
 });
 
+Route::get('/customerList', function () {
+	return view('customerList');
+});
+
+Route::get('/vendorList', function () {
+	return view('vendorList');
+});
+
+Route::get('/purchaseOrder', function () {
+	return view('purchaseOrder');
+});
+
 Route::get('login/logout', function () {
 	return (String)view('logout_view');
 });
+
 
 
