@@ -149,7 +149,7 @@ class MasterDataController extends Controller
 			'name' => 'required| min:3|unique:vendors,name',			
 			'address' => 'required',
 			'title' => 'required',
-			'des' => 'required',
+			'desc' => 'required',
 			'phone' => 'required |numeric',
 			
 		];
@@ -221,7 +221,7 @@ class MasterDataController extends Controller
 			'name' => 'required| min:3|unique:customers,name',			
 			'address' => 'required',
 			'title' => 'required',
-			'des' => 'required',
+			'desc' => 'required',
 			'phone' => 'required |numeric',
 			
 		];
