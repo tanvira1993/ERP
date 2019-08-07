@@ -39,7 +39,7 @@
 				<li><a href="">Master Data</a>
 					<ul class="submenu">
 						<li><a ui-sref="vendor">Vendor</a></li>
-						<li><a href="">Customer</a></li>
+						<li><a ui-sref="customer">Customer</a></li>
 						<li><a ui-sref="project">Project</a></li>
 						<li><a ui-sref="material">Metarial</a></li>
 					</ul>

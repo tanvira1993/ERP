@@ -54,6 +54,10 @@ Route::get('/vendor', function () {
 	return view('vendor_master');
 });
 
+Route::get('/customer', function () {
+	return view('customer_master');
+});
+
 Route::get('login/logout', function () {
 	return (String)view('logout_view');
 });
