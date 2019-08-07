@@ -160,7 +160,8 @@ var ErpApp = angular.module("ErpApp", [
  		$rootScope.logOut= function(){
  			window.location.href = 'login/logout/';
  		}
-
+ 		$rootScope.getAllVendorList();
+ 		$rootScope.getAllCustomerList();
  		$rootScope.getAllProjectList();
  		$rootScope.getAllMaterialList();
  	}]);
