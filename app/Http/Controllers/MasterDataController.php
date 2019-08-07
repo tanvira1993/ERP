@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Projects;
 use App\Materials;
+use App\Vendors;
+use App\Customers;
 use Response;
 use DB;
 use Validator;
