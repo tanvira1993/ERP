@@ -1,16 +1,16 @@
 <div class="row">
-	<h3 class="head header-text">Vendor Creation</h3>
+	<h3 class="head header-text">Customer Creation</h3>
 </div>
 
 
 <div>
-	<form id="project-form" name="vendorForm" novalidate>
+	<form id="project-form" name="customerForm" novalidate>
 		<div class="row">
 			<div class="label-design">
-				<label for="name">Vendor Name</label>
+				<label for="name">Customer Name</label>
 			</div>
 			<div class="col-75">				
-				<input type="text" name="name" ng-model="vendorInfo.name" placeholder="">
+				<input type="text" name="name" ng-model="customerInfo.name" placeholder="">
 			</div>
 		</div>
 
@@ -21,7 +21,7 @@
 			<div class="col-75">				        
 
 					
-				<input type="text" name="address" ng-model="vendorInfo.address" placeholder="">
+				<input type="text" name="address" ng-model="customerInfo.address" placeholder="">
 			</div>
 		</div>
 
@@ -30,7 +30,7 @@
 				<label for="phone">Phone No</label>
 			</div>     
 			<div class="col-75">				        
-				<input type="number"  name="phone" ng-model="vendorInfo.phone" placeholder="">
+				<input type="number"  name="phone" ng-model="customerInfo.phone" placeholder="">
 			</div>
 		</div>
 
@@ -41,7 +41,7 @@
 			<div class="col-75">				        
 
 					
-				<input type="text" name="title" ng-model="vendorInfo.title" placeholder="">
+				<input type="text" name="title" ng-model="customerInfo.title" placeholder="">
 			</div>
 		</div>
 
@@ -52,26 +52,27 @@
 			<div class="col-75">				        
 
 					
-				<input type="text" name="desc" ng-model="vendorInfo.desc" placeholder="">
+				<input type="text" name="desc" ng-model="customerInfo.desc" placeholder="">
 			</div>
 		</div>
+		
 
 		<div class="row submit-design">
-			<input type="submit" ng-click="createVendor()" value="Create">
+			<input type="submit" ng-click="createCustomer()" value="Create">
 		</div>
 	</form>
 	<div class="row" style="position: relative; left: 470px;top: -366px;">
 		<div class="container">
 			<div class="row">
-				<button ui-sref="vendorList" class="btn btn-warning">
-					Vendor List
+				<button ui-sref="customerList" class="btn btn-warning">
+					Customer List
 					<i class="fa fa-server"></i>
 				</button>
 			</div>	
 		</div>
 	</div>
 	<pre>
-		@{{vendorInfo|json}}
+		@{{customerInfo|json}}
 	</pre>
 </div>
 
