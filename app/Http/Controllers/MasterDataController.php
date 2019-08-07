@@ -158,8 +158,8 @@ class MasterDataController extends Controller
 
 		$messages = [
 			'name.required' => 'Name is required!',
-			'name.unique' => 'This Material already created.',			
-			'address.required' => 'Select Material Type!',
+			'name.unique' => 'This Vendor already created.',			
+			'address.required' => 'Address is required!',
 			'phone.required' => 'Phone Number is required!',
 			'title.required' => 'Title is required!',
 			'desc.required' => 'Description is required!',
@@ -230,8 +230,8 @@ class MasterDataController extends Controller
 
 		$messages = [
 			'name.required' => 'Name is required!',
-			'name.unique' => 'This Material already created.',			
-			'address.required' => 'Select Material Type!',
+			'name.unique' => 'This Customer already created.',			
+			'address.required' => 'Address is required!',
 			'phone.required' => 'Phone Number is required!',
 			'title.required' => 'Title is required!',
 			'desc.required' => 'Description is required!',
