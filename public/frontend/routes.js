@@ -174,4 +174,43 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
+.state('vendor', {
+        url: "/vendor",
+        templateUrl: "/vendor",
+        data: {pageTitle: 'Vendor'},
+        controller: "VendorController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/VendorController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+
+.state('customer', {
+        url: "/customer",
+        templateUrl: "/customer",
+        data: {pageTitle: 'Customer'},
+        controller: "CustomerController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/CustomerController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
 }]);
