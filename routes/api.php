@@ -24,6 +24,10 @@ Route::post('createProject', 'MasterDataController@saveProject');
 Route::get('projectList', 'MasterDataController@getAllProjectLists');
 Route::post('createMaterial', 'MasterDataController@saveMaterial');
 Route::get('materialList', 'MasterDataController@getAllMaterialLists');
+Route::post('createVendor', 'MasterDataController@saveVendor');
+Route::post('createCustomer', 'MasterDataController@saveCustomer');
+Route::get('vendorList', 'MasterDataController@getAllVendorLists');
+Route::get('customerList', 'MasterDataController@getAllCustomerLists');
 
 
 

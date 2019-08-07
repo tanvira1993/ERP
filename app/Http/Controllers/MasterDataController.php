@@ -141,4 +141,148 @@ class MasterDataController extends Controller
 		return Response::json(['success' => true, 'data' => $material], 200);
 	}
 
+	public function saveVendor (Request $request)
+	{
+		
+
+		$rules = [
+			'name' => 'required| min:3|unique:vendors,name',			
+			'address' => 'required',
+			'title' => 'required',
+			'des' => 'required',
+			'phone' => 'required |numeric',
+			
+		];
+
+		$messages = [
+			'name.required' => 'Name is required!',
+			'name.unique' => 'This Material already created.',			
+			'address.required' => 'Select Material Type!',
+			'phone.required' => 'Phone Number is required!',
+			'title.required' => 'Title is required!',
+			'desc.required' => 'Description is required!',
+
+		];
+
+		$validation = Validator::make($request->all(), $rules, $messages);
+
+        // redirect on validation error
+		if ($validation->fails()) {
+			$errorMsgString = implode("<br/>",$validation->messages()->all());
+			return Response::json(array('success' => false, 'heading' => 'Validation Error', 'message' => $errorMsgString), 400);
+		}
+
+		DB::beginTransaction();
+
+		try {
+			$id=$request->header('idUser');
+
+			$vendor = new Vendors;
+			$vendor->name = $request->name;
+			$vendor->title = $request->title;
+			$vendor->description = $request->desc;
+			$vendor->address = $request->address;
+			$vendor->phone_number = $request->phone;	
+			$vendor->user_id = $id;
+
+			
+			if($vendor->save()){
+				DB::commit();
+				return Response::json(array('success' => TRUE, 'data' => $vendor), 200);
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Vendor could can not be created!'), 400);
+			}
+		}
+		
+		catch (\Exception $e) {
+			echo $e;
+			DB::rollback();
+			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Vendor could can not be created!'), 400);
+		}	
+
+	}
+
+	public function getAllVendorLists()
+	{
+		$vendor = Vendors::select('vendors.*')->get();
+		return Response::json(['success' => true, 'data' => $vendor], 200);
+	}
+
+
+	public function saveCustomer (Request $request)
+	{
+		
+
+		$rules = [
+			'name' => 'required| min:3|unique:customers,name',			
+			'address' => 'required',
+			'title' => 'required',
+			'des' => 'required',
+			'phone' => 'required |numeric',
+			
+		];
+
+		$messages = [
+			'name.required' => 'Name is required!',
+			'name.unique' => 'This Material already created.',			
+			'address.required' => 'Select Material Type!',
+			'phone.required' => 'Phone Number is required!',
+			'title.required' => 'Title is required!',
+			'desc.required' => 'Description is required!',
+
+		];
+
+		$validation = Validator::make($request->all(), $rules, $messages);
+
+        // redirect on validation error
+		if ($validation->fails()) {
+			$errorMsgString = implode("<br/>",$validation->messages()->all());
+			return Response::json(array('success' => false, 'heading' => 'Validation Error', 'message' => $errorMsgString), 400);
+		}
+
+		DB::beginTransaction();
+
+		try {
+			$id=$request->header('idUser');
+
+			$customer = new Customers;
+			$customer->name = $request->name;
+			$customer->title = $request->title;
+			$customer->description = $request->desc;
+			$customer->address = $request->address;
+			$customer->phone_number = $request->phone;	
+			$customer->user_id = $id;
+
+			
+			if($customer->save()){
+				DB::commit();
+				return Response::json(array('success' => TRUE, 'data' => $customer), 200);
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Customer could can not be created!'), 400);
+			}
+		}
+		
+		catch (\Exception $e) {
+			echo $e;
+			DB::rollback();
+			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Customer could can not be created!'), 400);
+		}	
+
+	}
+
+
+	public function getAllCustomerLists()
+	{
+		$cutomer = Customers::select('customers.*')->get();
+		return Response::json(['success' => true, 'data' => $cutomer], 200);
+	}
+
 }

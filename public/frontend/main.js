@@ -127,6 +127,36 @@ var ErpApp = angular.module("ErpApp", [
 
  		}
 
+ 		$rootScope.getAllVendorList = function(){
+
+ 			$http({
+ 				method: 'get',
+ 				url: 'api/vendorList',
+ 			}).then(function (response) {
+ 				$rootScope.vendorList = response.data.data;
+
+ 			}, function (response) {
+
+
+ 			});
+
+ 		}
+
+ 		$rootScope.getAllCustomerList = function(){
+
+ 			$http({
+ 				method: 'get',
+ 				url: 'api/customerList',
+ 			}).then(function (response) {
+ 				$rootScope.customerList = response.data.data;
+
+ 			}, function (response) {
+
+
+ 			});
+
+ 		}
+
  		$rootScope.logOut= function(){
  			window.location.href = 'login/logout/';
  		}
