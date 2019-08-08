@@ -1,16 +1,16 @@
 <div class="row">
-	<h3 class="head header-text">Requsition Raise</h3>
+	<h3 class="head header-text">purchase Order</h3>
 </div>
 
 
 <div>
-	<form id="requsition-form" name="requsitionForm" novalidate>
+	<form id="purchaseOrder-form" name="purchaseOrderForm" novalidate>
 		<div class="row">
 			<div class="label-design">
 				<label for="idProject">Select Project</label>
 			</div>
 			<div class="col-75">				
-				<select name="idProject" ng-model="requsitionInfo.idProject" class="form-control select2dropdown">
+				<select name="idProject" ng-model="purchaseOrderInfo.idProject" class="form-control select2dropdown">
 					<option value="">Select Project</option>
 					<option ng-repeat="(key, value) in projectList" value="@{{value.project_id}}">@{{value.name}}</option>
 				</select>
@@ -19,12 +19,24 @@
 
 		<div class="row">  
 			<div class="label-design">
-				<label for="fname">Select Material</label>
+				<label for="idMaterial">Select Material</label>
 			</div>     
 			<div class="col-75">				        
-				<select name="idMaterial" ng-model="requsitionInfo.idMaterial" class="form-control select2dropdown">
+				<select name="idMaterial" ng-model="purchaseOrderInfo.idMaterial" class="form-control select2dropdown">
 					<option value="">Select Material</option>
 					<option ng-repeat="(key, value) in materialList" value="@{{value.material_id}}">@{{value.name}}</option>
+				</select>
+			</div>
+		</div>
+
+			<div class="row">  
+			<div class="label-design">
+				<label for="idVendor">Select Vendor</label>
+			</div>     
+			<div class="col-75">				        
+				<select name="idVendor" ng-model="purchaseOrderInfo.idVendor" class="form-control select2dropdown">
+					<option value="">Select Vendor</option>
+					<option ng-repeat="(key, value) in vendorList" value="@{{value.vendor_id}}">@{{value.name}}</option>
 				</select>
 			</div>
 		</div>
@@ -33,44 +45,37 @@
 				<label for="quantity">Quantity</label>
 			</div>     
 			<div class="col-75">				        
-				<input type="number"  name="quantity" ng-model="requsitionInfo.quantity" placeholder="">
+				<input type="number"  name="quantity" ng-model="purchaseOrderInfo.quantity" placeholder="">
 			</div>
 		</div>
 
-		<div class="row">  
+			<div class="row">  
 			<div class="label-design">
-				<label for="rName">Requsitioner Name</label>
+				<label for="price">Price</label>
 			</div>     
 			<div class="col-75">				        
-				<input type="text"  name="rName" ng-model="requsitionInfo.rName" placeholder="">
+				<input type="number"  name="price" ng-model="purchaseOrderInfo.price" placeholder="">
 			</div>
 		</div>
 
-		<div class="row">  
-			<div class="label-design">
-				<label for="vendor">Vendor</label>
-			</div>     
-			<div class="col-75">				        
-				<input type="text"  name="vendor" ng-model="requsitionInfo.vendor" placeholder="">
-			</div>
-		</div>
+		
 
 		<div class="row submit-design">
-			<input type="submit" ng-click="createRequsition()" value="Create">
+			<input type="submit" ng-click="createPurchaseOrder()" value="Create">
 		</div>
 	</form>
 	<div class="row" style="position: relative; left: 470px;top: -360px;">
 		<div class="container">
 			<div class="row">
-				<button ui-sref="projectList" class="btn btn-warning">
-					Requsition List
+				<button ui-sref="purchaseOrderList" class="btn btn-warning">
+					Purchase Order List
 					<i class="fa fa-server"></i>
 				</button>
 			</div>	
 		</div>
 	</div>
 	<pre>
-		@{{requsitionInfo|json}}
+		@{{purchaseOrderInfo|json}}
 	</pre>
 </div>
 

@@ -1,11 +1,9 @@
 /* Setup blank page controller */
-angular.module('ErpApp').controller('RequsitionController', ['$scope', '$rootScope', '$location', '$timeout', '$http', function($scope, $rootScope, $location, $timeout, $http) {
+angular.module('ErpApp').controller('PurchaseOrderController', ['$scope', '$rootScope', '$location', '$timeout', '$http', function($scope, $rootScope, $location, $timeout, $http) {
 	$scope.$on('$viewContentLoaded', function() {
-	// initialize core components
+        // initialize core components
 
-
-	//This function use for select dropdown
-	const initSelect2Dropdown = function () {
+        const initSelect2Dropdown = function () {
 		$timeout(function () {
 			$(".select2dropdown").select2({
 				placeholder: null,
@@ -14,16 +12,16 @@ angular.module('ErpApp').controller('RequsitionController', ['$scope', '$rootSco
 		}, 500);
 	} 
 
-	$scope.createRequsition = function(){
+	$scope.createPurchaseOrder = function(){
 
         	toastr.info("'info', 'Loading!', 'Please wait.'")
         	$http({
         		method: 'post',
-        		url: 'api/createRequsition',
-        		data:$scope.requsitionInfo
+        		url: 'api/createPurchaseOrder',
+        		data:$scope.purchaseOrderInfo
         	}).then(function (response) {
-        		$scope.requsitionInfo=null;
-        		toastr.success("Requsition Created..!!")         		       		
+        		$scope.purchaseOrderInfo=null;
+        		toastr.success("Purchase Order Created..!!")         		       		
         	}, function (response) {
         		swal({
         			title: response.data.heading,
@@ -31,11 +29,13 @@ angular.module('ErpApp').controller('RequsitionController', ['$scope', '$rootSco
         			html:true,
         			type: 'error'
         		}); 
-        		toastr.error("Requsition could not be Created!!")
+        		toastr.error("Purchase Order could not be Created!!")
         	});
 
         }
 
 	initSelect2Dropdown();   
-});
+
+        
+    });
 }]);

@@ -45,7 +45,7 @@
 					</ul>
 				</li>
 				<li><a ui-sref="requsition">Requsition</a></li>
-				<li><a ui-sref="requsition">Purchase Order</a></li>
+				<li><a ui-sref="purchaseOrder">Purchase Order</a></li>
 				<li><a href="">Good Movement</a>
 					<ul class="submenu">
 						<li><a href="">Good Recieve</a></li>
