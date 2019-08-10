@@ -4,7 +4,7 @@
 
 
 <div>
-	<form id="project-form" name="vendorForm" novalidate>
+	<form id="vendor-form" name="vendorForm" novalidate>
 		<div class="row">
 			<div class="label-design">
 				<label for="name">Vendor Name</label>

@@ -4,7 +4,7 @@
 
 
 <div>
-	<form id="project-form" name="customerForm" novalidate>
+	<form id="customer-form" name="customerForm" novalidate>
 		<div class="row">
 			<div class="label-design">
 				<label for="name">Customer Name</label>
