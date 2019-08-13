@@ -39,7 +39,7 @@
 			</div>
 		</div>
 
-			<div class="row">  
+		<div class="row">  
 			<div class="label-design">
 				<label for="price">Price</label>
 			</div>     
@@ -61,7 +61,7 @@
 		
 
 		<div class="row submit-design">
-			<input type="submit" ng-click="createRejectGood()" value="Receive">
+			<input type="submit" ng-click="createRejectGood()" value="Reject">
 		</div>
 	</form>
 <!-- 	<div class="row" style="position: relative; left: 470px;top: -360px;">

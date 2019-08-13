@@ -1,5 +1,5 @@
 <div class="row">
-	<h3 class="head header-text">purchase Order</h3>
+	<h3 class="head header-text">Purchase Order</h3>
 </div>
 
 
@@ -29,7 +29,7 @@
 			</div>
 		</div>
 
-			<div class="row">  
+		<div class="row">  
 			<div class="label-design">
 				<label for="idVendor">Select Vendor</label>
 			</div>     
@@ -49,7 +49,7 @@
 			</div>
 		</div>
 
-			<div class="row">  
+		<div class="row">  
 			<div class="label-design">
 				<label for="price">Price</label>
 			</div>     

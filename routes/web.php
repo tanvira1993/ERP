@@ -35,35 +35,35 @@ Route::get('/passwordReset', function () {
 });
 
 Route::get('/project', function () {
-	return view('project_master');
+	return view('master/project_master');
 });
 
 Route::get('/projectList', function () {
-	return view('projectList');
+	return view('master/projectList');
 });
 
 Route::get('/material', function () {
-	return view('material_master');
+	return view('master/material_master');
 });
 
 Route::get('/materialList', function () {
-	return view('materialList');
+	return view('master/materialList');
 });
 
 Route::get('/vendor', function () {
-	return view('vendor_master');
+	return view('master/vendor_master');
 });
 
 Route::get('/customer', function () {
-	return view('customer_master');
+	return view('master/customer_master');
 });
 
 Route::get('/customerList', function () {
-	return view('customerList');
+	return view('master/customerList');
 });
 
 Route::get('/vendorList', function () {
-	return view('vendorList');
+	return view('master/vendorList');
 });
 
 Route::get('/purchaseOrder', function () {
@@ -71,47 +71,47 @@ Route::get('/purchaseOrder', function () {
 });
 
 Route::get('/goodReceive', function () {
-	return view('goodReceive');
+	return view('materialMovement/goodReceive');
 });
 
 Route::get('/consumeGood', function () {
-	return view('consumeGood');
+	return view('materialMovement/consumeGood');
 });
 
 Route::get('/transferGood', function () {
-	return view('transferGood');
+	return view('materialMovement/transferGood');
 });
 
 Route::get('/goodSell', function () {
-	return view('goodSell');
+	return view('sell/goodSell');
 });
 
 Route::get('/projectSell', function () {
-	return view('projectSell');
+	return view('sell/projectSell');
 });
 
 Route::get('/utilityBillPost', function () {
-	return view('utilityBillPost');
+	return view('accounting/utilityBillPost');
 });
 
 Route::get('/bankLoan', function () {
-	return view('bankLoan');
+	return view('accounting/bankLoan');
 });
 
 Route::get('/ownInvestment', function () {
-	return view('ownInvestment');
+	return view('accounting/ownInvestment');
 });
 
 Route::get('/advancePayment', function () {
-	return view('advancePayment');
+	return view('accounting/advancePayment');
 });
 
 Route::get('/labourCost', function () {
-	return view('labourCost');
+	return view('accounting/labourCost');
 });
 
 Route::get('/rejectGood', function () {
-	return view('rejectGood');
+	return view('materialMovement/rejectGood');
 });
 
 
