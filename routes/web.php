@@ -110,6 +110,10 @@ Route::get('/labourCost', function () {
 	return view('labourCost');
 });
 
+Route::get('/rejectGood', function () {
+	return view('rejectGood');
+});
+
 
 Route::get('login/logout', function () {
 	return (String)view('logout_view');

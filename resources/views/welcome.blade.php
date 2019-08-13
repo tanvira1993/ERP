@@ -50,7 +50,8 @@
 					<ul class="submenu">
 						<li><a ui-sref="goodReceive">Good Recieve</a></li>
 						<li><a ui-sref="consumeGood">Consume Good</a></li>
-						<li><a ui-sref="transferGood">Transfer Good</a></li>					
+						<li><a ui-sref="transferGood">Transfer Good</a></li>
+						<li><a ui-sref="rejectGood">Reject Good</a></li>					
 					</ul>
 				</li>
 				<li><a href="">Accounting Posting</a>
