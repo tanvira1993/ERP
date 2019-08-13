@@ -70,6 +70,47 @@ Route::get('/purchaseOrder', function () {
 	return view('purchaseOrder');
 });
 
+Route::get('/goodReceive', function () {
+	return view('goodReceive');
+});
+
+Route::get('/consumeGood', function () {
+	return view('consumeGood');
+});
+
+Route::get('/transferGood', function () {
+	return view('transferGood');
+});
+
+Route::get('/goodSell', function () {
+	return view('goodSell');
+});
+
+Route::get('/projectSell', function () {
+	return view('projectSell');
+});
+
+Route::get('/utilityBillPost', function () {
+	return view('utilityBillPost');
+});
+
+Route::get('/bankLoan', function () {
+	return view('bankLoan');
+});
+
+Route::get('/ownInvestment', function () {
+	return view('ownInvestment');
+});
+
+Route::get('/advancePayment', function () {
+	return view('advancePayment');
+});
+
+Route::get('/labourCost', function () {
+	return view('labourCost');
+});
+
+
 Route::get('login/logout', function () {
 	return (String)view('logout_view');
 });

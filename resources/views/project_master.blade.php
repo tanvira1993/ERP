@@ -7,7 +7,7 @@
 	<form id="project-form" name="projectForm" novalidate>
 		<div class="row">
 			<div class="label-design">
-				<label for="fname">Project Name</label>
+				<label for="name">Project Name</label>
 			</div>
 			<div class="col-75">				
 				<input type="text" name="name" ng-model="projectInfo.name" placeholder="">

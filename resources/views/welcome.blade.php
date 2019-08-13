@@ -48,25 +48,25 @@
 				<li><a ui-sref="purchaseOrder">Purchase Order</a></li>
 				<li><a href="">Good Movement</a>
 					<ul class="submenu">
-						<li><a href="">Good Recieve</a></li>
-						<li><a href="">Consume Good</a></li>
-						<li><a href="">Transfer Good</a></li>					
+						<li><a ui-sref="goodReceive">Good Recieve</a></li>
+						<li><a ui-sref="consumeGood">Consume Good</a></li>
+						<li><a ui-sref="transferGood">Transfer Good</a></li>					
 					</ul>
 				</li>
 				<li><a href="">Accounting Posting</a>
 					<ul class="submenu">
 						<li><a href="">Bill Post</a></li>
-						<li><a href="">Utility Bill Post</a></li>
-						<li><a href="">Bank Loan</a></li>
-						<li><a href="">Own Invest</a></li>
-						<li><a href="">Advance Payment</a></li>
-						<li><a href="">Labour Cost</a></li>
+						<li><a ui-sref="utilityBillPost">Utility Bill Post</a></li>
+						<li><a ui-sref="bankLoan">Bank Loan</a></li>
+						<li><a ui-sref="ownInvestment">Own Investment</a></li>
+						<li><a ui-sref="advancePayment">Advance Payment</a></li>
+						<li><a ui-sref="labourCost">Labour Cost</a></li>
 					</ul>
 				</li>
 				<li><a href="">Sells</a>
 					<ul class="submenu">
-						<li><a href="">Good Sell</a></li>
-						<li><a href="">Project Sell</a></li>
+						<li><a ui-sref="goodSell">Good Sell</a></li>
+						<li><a ui-sref="projectSell">Project Sell</a></li>
 					</ul>
 				</li>
 				<li><a href="">Report</a>
