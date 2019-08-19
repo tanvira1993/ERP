@@ -62,7 +62,7 @@
 	<div class="row" style="position: relative; left: 470px;top: -360px;">
 		<div class="container">
 			<div class="row">
-				<button ui-sref="projectList" class="btn btn-warning">
+				<button ui-sref="requsitionList" class="btn btn-warning">
 					Requsition List
 					<i class="fa fa-server"></i>
 				</button>

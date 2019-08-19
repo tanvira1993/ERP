@@ -20,7 +20,7 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/requsition', function () {
-	return view('requsition');
+	return view('requsition/requsition');
 });
 Route::get('/login', function () {
 	return view('login');
@@ -119,5 +119,7 @@ Route::get('login/logout', function () {
 	return (String)view('logout_view');
 });
 
-
+Route::get('/requsitionList', function () {
+	return view('requsition/requsitionList');
+});
 

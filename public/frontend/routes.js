@@ -174,7 +174,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
-.state('vendor', {
+    .state('vendor', {
         url: "/vendor",
         templateUrl: "/vendor",
         data: {pageTitle: 'Vendor'},
@@ -194,7 +194,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
 
 
 
-.state('customer', {
+    .state('customer', {
         url: "/customer",
         templateUrl: "/customer",
         data: {pageTitle: 'Customer'},
@@ -213,7 +213,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
-.state('customerList', {
+    .state('customerList', {
         url: "/customerList",
         templateUrl: "/customerList",
         data: {pageTitle: 'Customer List'},
@@ -232,7 +232,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
-.state('vendorList', {
+    .state('vendorList', {
         url: "/vendorList",
         templateUrl: "/vendorList",
         data: {pageTitle: 'Vendor List'},
@@ -251,7 +251,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
-.state('purchaseOrder', {
+    .state('purchaseOrder', {
         url: "/purchaseOrder",
         templateUrl: "/purchaseOrder",
         data: {pageTitle: 'Purchase Order'},
@@ -269,7 +269,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
         }
     })
 
-.state('goodReceive', {
+    .state('goodReceive', {
         url: "/goodReceive",
         templateUrl: "/goodReceive",
         data: {pageTitle: 'Good Receive'},
@@ -288,7 +288,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
-.state('consumeGood', {
+    .state('consumeGood', {
         url: "/consumeGood",
         templateUrl: "/consumeGood",
         data: {pageTitle: 'Consume Good'},
@@ -306,7 +306,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
         }
     })
 
-.state('transferGood', {
+    .state('transferGood', {
         url: "/transferGood",
         templateUrl: "/transferGood",
         data: {pageTitle: 'Transfer Good'},
@@ -326,7 +326,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
 
 
 
-.state('goodSell', {
+    .state('goodSell', {
         url: "/goodSell",
         templateUrl: "/goodSell",
         data: {pageTitle: 'Good Sell'},
@@ -345,7 +345,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
-.state('projectSell', {
+    .state('projectSell', {
         url: "/projectSell",
         templateUrl: "/projectSell",
         data: {pageTitle: 'Project Sell'},
@@ -363,7 +363,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
         }
     })
 
-.state('utilityBillPost', {
+    .state('utilityBillPost', {
         url: "/utilityBillPost",
         templateUrl: "/utilityBillPost",
         data: {pageTitle: 'Utility Bill Post'},
@@ -381,7 +381,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
         }
     })
 
-.state('bankLoan', {
+    .state('bankLoan', {
         url: "/bankLoan",
         templateUrl: "/bankLoan",
         data: {pageTitle: 'Bank Loan'},
@@ -399,7 +399,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
         }
     })
 
-.state('ownInvestment', {
+    .state('ownInvestment', {
         url: "/ownInvestment",
         templateUrl: "/ownInvestment",
         data: {pageTitle: 'Own Investment'},
@@ -417,7 +417,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
         }
     })
 
-.state('advancePayment', {
+    .state('advancePayment', {
         url: "/advancePayment",
         templateUrl: "/advancePayment",
         data: {pageTitle: 'Advance Payment'},
@@ -435,7 +435,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
         }
     })
 
-.state('labourCost', {
+    .state('labourCost', {
         url: "/labourCost",
         templateUrl: "/labourCost",
         data: {pageTitle: 'Labour Cost'},
@@ -454,7 +454,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
-.state('rejectGood', {
+    .state('rejectGood', {
         url: "/rejectGood",
         templateUrl: "/rejectGood",
         data: {pageTitle: 'Reject Good'},
@@ -466,6 +466,25 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
                     insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                     files: [
                     'ng-asset/RejectGoodController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+    .state('requsitionList', {
+        url: "/requsitionList",
+        templateUrl: "/requsitionList",
+        data: {pageTitle: 'Requsition List'},
+        controller: "RequsitionListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/RequsitionListController.js'
                     ]
                 });
             }]

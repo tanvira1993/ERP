@@ -28,6 +28,11 @@ Route::post('createVendor', 'MasterDataController@saveVendor');
 Route::post('createCustomer', 'MasterDataController@saveCustomer');
 Route::get('vendorList', 'MasterDataController@getAllVendorLists');
 Route::get('customerList', 'MasterDataController@getAllCustomerLists');
+Route::post('createRequsition', 'RequisitionController@saveRequisition');
+Route::get('requsitionList', 'RequisitionController@getAllRequisitionLists');
+Route::get('requsitionListById', 'RequisitionController@getRequisitionListsById');
+
+
 
 
 
