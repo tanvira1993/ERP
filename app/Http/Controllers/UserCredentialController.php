@@ -173,4 +173,11 @@ class UserCredentialController extends Controller
 		
 	}
 
+	public function getUserIdById(Request $request)
+	{
+		$id=$request->header('idUser');		
+		$usersInfo = User::select('users.*')->where('user_id',$id)->first();
+		return Response::json(['success' => true, 'data' => $usersInfo], 200);
+	}
+
 }

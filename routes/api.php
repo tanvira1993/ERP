@@ -31,6 +31,7 @@ Route::get('customerList', 'MasterDataController@getAllCustomerLists');
 Route::post('createRequsition', 'RequisitionController@saveRequisition');
 Route::get('requsitionList', 'RequisitionController@getAllRequisitionLists');
 Route::get('requsitionListById', 'RequisitionController@getRequisitionListsById');
+Route::get('userIdById', 'UserCredentialController@getUserIdById');
 
 
 

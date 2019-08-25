@@ -19,12 +19,12 @@
 	
 </head>
 <body ng-controller="AppController">
-	<div ng-if="token!=null">
+	<div ng-if="token!=null && idUser!=null	&& idUserRole!=null">
 		<div>
 			<nav class="navbar navbar-light justify-content-center " style="background-color: #D7D2D2;">
-				<a class="navbar-brand"><h1 style="font-family:serif;">Inventory & Accounting</h1></a>				
+				<a class="navbar-brand" ui-sref="dashboard"><h1 style="font-family:serif;">Inventory & Accounting</h1></a>				
 				<div class="dropdown " style="position: relative; left: 300px;top: -5px;">
-					<a style="cursor: pointer;" class="text-dark navbar-brand dropdown" data-toggle="dropdown"> <h1>...</h1></a>
+					<a style="cursor: pointer;" class="text-dark navbar-brand dropdown" data-toggle="dropdown"> <span style="font-size:13px">@{{usersInfo.name}}&nbsp; <i class="fa fa-caret-down"></i></span></a>
 					<ul style="background-color: #D7D2D2;" class=" dropdown-menu" >
 						<li ><a ui-sref="passwordReset">Password Reset</a></li>
 						<li style="cursor: pointer;"><a ng-click="logOut()">Logout</a></li>
@@ -86,7 +86,7 @@
 		</div>
 	</div>
 
-	<div ng-if="token==null" style="background-color:powderblue;">
+	<div ng-if="token==null || idUser==null	|| idUserRole==null" style="background-color:powderblue;">
 		<div class="login-page">
 			<div class="form">
 				<h1 style="font-family:serif;">Login</h1>
@@ -105,15 +105,15 @@
 
 	
 
-	<div ng-if="token!=null" class="footer">
+	<div ng-if="token!=null && idUser!=null	&& idUserRole!=null" class="footer">
 		<p>Footer</p>
 	</div>
 	<script src="frontend/jquery.min.js" type="text/javascript"></script>
 	<script src="frontend/angular.min.js"></script>
 	<script src="frontend/ocLazyLoad.min.js"></script>
-	<script src="frontend/angular-ui-router.js"></script>
+	<script src="frontend/angular-ui-router.js"></script>	
 	<script src="frontend/main.js" type="text/javascript"></script>
-	<script src="frontend/routes.js" type="text/javascript"></script>
+	<script src="frontend/routes.js" type="text/javascript"></script>	
 	<script src="frontend/toastr.min.js" type="text/javascript"></script>
 	<script src="frontend/popper.min.js"></script>
 	<script src="frontend/bootstrap.min.js"></script>

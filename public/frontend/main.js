@@ -84,7 +84,7 @@ var ErpApp = angular.module("ErpApp", [
  					$rootScope.idUserRole= localStorage.getItem('idUserRole');
  					toastr.success("Login Success..!!")
  					
- 					// $window.location.reload();
+ 					$window.location.reload();
  					$location.path('/dashboard');
  				}, function(response) {
  					$rootScope.loginError = response.data.error;
@@ -157,11 +157,32 @@ var ErpApp = angular.module("ErpApp", [
 
  		}
 
+ 		$rootScope.getUserIdById = function(){
+
+ 			$http({
+ 				method: 'get',
+ 				url: 'api/userIdById',
+ 			}).then(function (response) {
+ 				$rootScope.usersInfo= response.data.data;
+
+ 			}, function (response) {
+
+
+ 			});
+
+ 		}
+
  		$rootScope.logOut= function(){
  			window.location.href = 'login/logout/';
  		}
- 		$rootScope.getAllVendorList();
- 		$rootScope.getAllCustomerList();
- 		$rootScope.getAllProjectList();
- 		$rootScope.getAllMaterialList();
+
+ 		if($rootScope.token!=null && $rootScope.idUser!=null&& $rootScope.idUserRole!=null)
+ 		{
+ 			$rootScope.getAllVendorList();
+ 			$rootScope.getAllCustomerList();
+ 			$rootScope.getAllProjectList();
+ 			$rootScope.getAllMaterialList();
+ 			$rootScope.getUserIdById();
+ 		}
+ 		
  	}]);
