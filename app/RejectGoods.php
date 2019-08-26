@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-class PurchaseOrders extends Model
+class RejectGoods extends Model
 {
 
-	protected $primaryKey = 'po_id';
-	protected $table = 'po';
+	protected $primaryKey = 'reject_good_id';
+	protected $table = 'reject_goods';
 	public $timestamps = false;
 
 }

@@ -29,6 +29,19 @@
 			</div>
 		</div>
 
+
+	<div class="row">  
+			<div class="label-design">
+				<label for="amount">Amount</label>
+			</div>     
+			<div class="col-75">				        
+				<input type="number"  name="amount" ng-model="utilityBillPostInfo.amount" placeholder="">
+			</div>
+		</div>
+
+
+
+
 			<div class="row">  
 			<div class="label-design">
 				<label for="desc">Description</label>
