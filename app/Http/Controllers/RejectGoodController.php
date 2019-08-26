@@ -13,6 +13,7 @@ use App\Requisitions;
 use App\GoodReceives;
 use App\ConsumeMaterials;
 use App\TransferMaterials;
+use App\RejectGoods;
 use Response;
 use DB;
 use Validator;
@@ -36,8 +37,7 @@ class RejectGoodController extends Controller
 			'idMaterial.required' => 'Material is required!',
 			'quantity.required' => 'Quantity is required!',
 			'price.required' => 'Price is required!',
-			'remarks.required' => 'Remarks is required!',
-			
+			'remarks.required' => 'Remarks is required!',			
 
 		];
 		
@@ -54,11 +54,12 @@ class RejectGoodController extends Controller
 		try {
 			$id=$request->header('idUser');
 
-            $rejectGood = new TransferMaterials;
-			$rejectGood->supply_project_id = $request->idProjectS;
-			$rejectGood->receive_project_id = $request->idProjectR;
+            $rejectGood = new RejectGoods;
+			$rejectGood->project_id = $request->idProject;
 			$rejectGood->material_id = $request->idMaterial;
 			$rejectGood->quantity = $request->quantity;
+			$rejectGood->price = $request->price;
+			$rejectGood->remarks = $request->remarks;
 			$rejectGood->user_id = $id;
 			
 			if($rejectGood->save()){
@@ -69,29 +70,29 @@ class RejectGoodController extends Controller
 			else{
 
 				DB::rollback();
-				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Transfer Good could can not be transferred!'), 400);
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Reject Good could can not be done!'), 400);
 			}
 		}
 		
 		catch (\Exception $e) {
 			echo $e;
 			DB::rollback();
-			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Transfer Good could can not be transferred!'), 400);
+			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Reject Good could can not be done!'), 400);
 		}	
 
 	}
 
 	
-	public function getAllTransferGoodLists()
+	public function getRejectGoodsLists()
 	{
-		$rejectGood = TransferMaterials::select('transfer_materials.*')->get();
+		$rejectGood = RejectGoods::select('reject_goods.*')->get();
 		return Response::json(['success' => true, 'data' => $rejectGood], 200);
 	}
 
-	public function getTransferGoodById(Request $request)
+	public function getRejectGoodById(Request $request)
 	{
 		$id=$request->header('idUser');
-		$rejectGood = TransferMaterials::select('transfer_materials.*')->where('user_id', $id)->get();
+		$rejectGood = RejectGoods::select('reject_goods.*')->where('user_id', $id)->get();
 		return Response::json(['success' => true, 'data' => $rejectGood], 200);
 	}
 

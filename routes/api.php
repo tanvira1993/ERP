@@ -44,9 +44,9 @@ Route::get('getConsumeGoodById', 'ConsumeGoodController@getConsumeGoodById');
 Route::post('createTransferGood', 'TransferGoodController@saveTransferGood');
 Route::get('getAllTransferGoodLists', 'TransferGoodController@getAllTransferGoodLists');
 Route::get('getTransferGoodById', 'TransferGoodController@getTransferGoodById');
-//Route::post('createRejectGood', 'RejectGoodController@saveRejectGood');
-//Route::get('getAllTransferGoodLists', 'RejectGoodController@getAllTransferGoodLists');
-//Route::get('getTransferGoodById', 'RejectGoodController@getTransferGoodById');
+Route::post('createRejectGood', 'RejectGoodController@saveRejectGood');
+Route::get('getRejectGoodLists', 'RejectGoodController@getRejectGoodLists');
+Route::get('getRejectGoodById', 'RejectGoodController@getRejectGoodById');
 Route::post('createUtilityBillPost', 'UtilityBillPostController@saveUtilityBillPost');
 Route::get('getUtilityBillPostLists', 'UtilityBillPostController@getUtilityBillPostLists');
 Route::get('getUtilityBillPostById', 'UtilityBillPostController@getUtilityBillPostById');
@@ -59,12 +59,15 @@ Route::get('getOwnInvestmentById', 'OwnInvestmentController@getOwnInvestmentById
 Route::post('createAdvancePayment', 'AdvancePaymentController@saveAdvancePayment');
 Route::get('getAdvancePaymentLists', 'AdvancePaymentController@getAdvancePaymentLists');
 Route::get('getAdvancePaymentById', 'AdvancePaymentController@getAdvancePaymentById');
-
-
 Route::post('createLabourCost', 'LabourCostController@saveLabourCost');
 Route::get('getLabourCostLists', 'LabourCostController@getLabourCostLists');
 Route::get('getLabourCostById', 'LabourCostController@getLabourCostById');
-
+Route::post('createGoodSell', 'GoodSellController@saveGoodSell');
+Route::get('getGoodSellLists', 'GoodSellController@getGoodSellLists');
+Route::get('getGoodSellById', 'GoodSellController@getGoodSellById');
+Route::post('createProjectSell', 'ProjectSellController@saveProjectSell');
+Route::get('getProjectSellLists', 'ProjectSellController@getProjectSellLists');
+Route::get('getProjectSellById', 'ProjectSellController@getProjectSellById');
 
 
 
