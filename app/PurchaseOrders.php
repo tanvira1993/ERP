@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-class PurchaseOrder extends Model
+class PurchaseOrders extends Model
 {
 
 	protected $primaryKey = 'po_id';

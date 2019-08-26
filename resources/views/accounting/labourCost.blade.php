@@ -39,6 +39,14 @@
 
 
 	
+<div class="row">  
+			<div class="label-design">
+				<label for="desc">Description</label>
+			</div>     
+			<div class="col-75">				        
+				<input type="text"  name="desc" ng-model="labourCostInfo.desc" placeholder="">
+			</div>
+		</div>
 
 			
 

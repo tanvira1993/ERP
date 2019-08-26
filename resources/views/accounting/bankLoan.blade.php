@@ -26,6 +26,17 @@
 			</div>
 		</div>
 
+
+<div class="row">  
+			<div class="label-design">
+				<label for="banklocation">Bank Location</label>
+			</div>     
+			<div class="col-75">				        
+				<input type="text"  name="banklocation" ng-model="bankLoanInfo.banklocation" placeholder="">
+			</div>
+		</div>
+
+
 		<div class="row">  
 			<div class="label-design">
 				<label for="amount">Amount</label>
