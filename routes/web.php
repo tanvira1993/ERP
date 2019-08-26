@@ -123,3 +123,6 @@ Route::get('/requsitionList', function () {
 	return view('requsition/requsitionList');
 });
 
+Route::get('/adminPasswordReset', function () {
+	return view('adminPasswordReset');
+});
