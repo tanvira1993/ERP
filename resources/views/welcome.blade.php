@@ -27,6 +27,7 @@
 					<a style="cursor: pointer;" class="text-dark navbar-brand dropdown" data-toggle="dropdown"> <span style="font-size:13px">@{{usersInfo.name}}&nbsp; <i class="fa fa-caret-down"></i></span></a>
 					<ul style="background-color: #D7D2D2;" class=" dropdown-menu" >
 						<li ><a ui-sref="passwordReset">Password Reset</a></li>
+						<li ng-if="idUserRole==0"style="cursor: pointer;"><a ui-sref="adminPasswordReset">Force Reset</a></li>
 						<li style="cursor: pointer;"><a ng-click="logOut()">Logout</a></li>
 
 					</ul>

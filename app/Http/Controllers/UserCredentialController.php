@@ -180,4 +180,61 @@ class UserCredentialController extends Controller
 		return Response::json(['success' => true, 'data' => $usersInfo], 200);
 	}
 
+	public function getAllUserId()
+	{
+		$usersList = User::select('users.*')->get();
+		return Response::json(['success' => true, 'data' => $usersList], 200);
+	}
+
+	public function adminResetPassword(Request $request)
+	{
+		$rules = [			
+			'password' => 'required | min:2',
+			'idUser' => 'required | numeric',
+
+		];
+
+		$messages = [
+			'password.required' => 'password is required!',
+			'idUser.required' => 'Select User!',
+			
+		];
+
+		$validation = Validator::make($request->all(), $rules, $messages);
+
+        // redirect on validation error
+		if ($validation->fails()) {
+			$errorMsgString = implode("<br/>",$validation->messages()->all());
+			return Response::json(array('success' => false, 'heading' => 'Validation Error', 'message' => $errorMsgString), 400);
+		}
+
+		DB::beginTransaction();
+
+		try {
+
+			$id2 =$request->idUser;
+			$user =  User::find($id2);					
+			$user->password = Hash::make($request->password);
+
+			if($user->save()){
+				DB::commit();
+				return Response::json(array('success' => TRUE, 'data' => $user), 200);
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Password could can not be Updated!'), 400);
+
+			}
+
+		}
+		
+		catch (\Exception $e) {
+			echo $e;
+			DB::rollback();
+			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Password could can not be Updated!'), 400);
+		}
+	}
+
 }
