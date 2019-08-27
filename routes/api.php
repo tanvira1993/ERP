@@ -68,7 +68,14 @@ Route::get('getGoodSellById', 'GoodSellController@getGoodSellById');
 Route::post('createProjectSell', 'ProjectSellController@saveProjectSell');
 Route::get('getProjectSellLists', 'ProjectSellController@getProjectSellLists');
 Route::get('getProjectSellById', 'ProjectSellController@getProjectSellById');
-
+Route::get('getAlldocumentList', 'DocumentTypeController@getAlldocumentList');
+Route::post('createRelease', 'ReleaseController@saveRelease');
+Route::get('getApproverList1', 'ApprovalController@getLevelOneApprovalList');
+Route::get('getApproverList2', 'ApprovalController@getLevelTwoApprovalList');
+Route::get('getApproverList3', 'ApprovalController@getLevelThreeApprovalList');
+Route::get('getApproverList4', 'ApprovalController@getLevelFourApprovalList');
+Route::get('getPRApprovalList', 'ApprovalController@getPRApprovalList');
+Route::get('getPRApprovalListById', 'ApprovalController@getPRApprovalListById');
 
 
 

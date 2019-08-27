@@ -59,6 +59,20 @@ input[type=submit]:hover {
   text-align: center;
 }
 
+.qty {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  font-size: 10px;
+  background: #F8694A;
+  color: #FFF;
+  border-radius: 50%;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";

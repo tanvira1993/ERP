@@ -126,3 +126,8 @@ Route::get('/requsitionList', function () {
 Route::get('/adminPasswordReset', function () {
 	return view('adminPasswordReset');
 });
+
+Route::get('/release', function () {
+	return view('release/release');
+});
+

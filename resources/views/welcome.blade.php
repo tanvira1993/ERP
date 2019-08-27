@@ -24,7 +24,7 @@
 			<nav class="navbar navbar-light justify-content-center " style="background-color: #D7D2D2;">
 				<a class="navbar-brand" ui-sref="dashboard"><h1 style="font-family:serif;">Inventory & Accounting</h1></a>				
 				<div class="dropdown " style="position: relative; left: 300px;top: -5px;">
-					<a style="cursor: pointer;" class="text-dark navbar-brand dropdown" data-toggle="dropdown"> <span style="font-size:13px">@{{usersInfo.name}}&nbsp; <i class="fa fa-caret-down"></i></span></a>
+					<a style="cursor: pointer;" class="text-dark navbar-brand dropdown" data-toggle="dropdown"> <span style="font-size:13px">@{{usersInfo.name}}&nbsp; <i class="fa fa-caret-down"><span class="qty" ng-if="vendorList.length>0">@{{vendorList.length}}</span></i></span></a>
 					<ul style="background-color: #D7D2D2;" class=" dropdown-menu" >
 						<li ><a ui-sref="passwordReset">Password Reset</a></li>
 						<li ng-if="idUserRole==0"style="cursor: pointer;"><a ui-sref="adminPasswordReset">Force Reset</a></li>
@@ -79,6 +79,8 @@
 						<li><a href="">Balance Sheet</a></li>
 					</ul>
 				</li>
+				<li><a ui-sref="release">Release Strategy</a></li>
+
 			</ul>
 		</nav>
 

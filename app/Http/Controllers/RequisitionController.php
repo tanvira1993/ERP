@@ -10,6 +10,7 @@ use App\Materials;
 use App\Vendors;
 use App\Customers;
 use App\Requisitions;
+use App\Releases;
 use Response;
 use DB;
 use Validator;
@@ -55,8 +56,17 @@ class RequisitionController extends Controller
 			$requisitions->requisition_name = $request->rName;
 			$requisitions->vedor_info = $request->vendor;
 			$requisitions->user_id = $id;
+			$requisitions->document_id = 1;
+			$requisitions->l1 = 0;
+			$requisitions->l2 = 0;
+			$requisitions->l3 = 0;
+			$requisitions->l4 = 0;
+			$requisitionRelease = Releases::select('releases.*')
+			->where('document_id',1)
+			->where('project_id', $request->idProject)
+			->first();
+			$requisitions->release_id = $requisitionRelease->release_id;
 
-			
 			if($requisitions->save()){
 				DB::commit();
 				return Response::json(array('success' => TRUE, 'data' => $requisitions), 200);

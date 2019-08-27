@@ -142,6 +142,54 @@ var ErpApp = angular.module("ErpApp", [
 
  		}
 
+ 		$rootScope.getApproverList1 = function(){
+ 			$http({
+ 				method: 'get',
+ 				url: 'api/getApproverList1',
+ 			}).then(function (response) {
+ 				$rootScope.approverList1 = response.data.data;
+ 			}, function (response) {
+
+
+ 			});
+ 		}
+ 		
+ 		$rootScope.getApproverList2 = function(){
+ 			$http({
+ 				method: 'get',
+ 				url: 'api/getApproverList2',
+ 			}).then(function (response) {
+ 				$rootScope.approverList2 = response.data.data;
+ 			}, function (response) {
+
+
+ 			});
+ 		}
+
+ 		$rootScope.getApproverList3 = function(){
+ 			$http({
+ 				method: 'get',
+ 				url: 'api/getApproverList3',
+ 			}).then(function (response) {
+ 				$rootScope.approverList3 = response.data.data;
+ 			}, function (response) {
+
+
+ 			});
+ 		}
+
+ 		$rootScope.getApproverList4 = function(){
+ 			$http({
+ 				method: 'get',
+ 				url: 'api/getApproverList4',
+ 			}).then(function (response) {
+ 				$rootScope.approverList4 = response.data.data;
+ 			}, function (response) {
+
+
+ 			});
+ 		}
+
  		$rootScope.getAllCustomerList = function(){
 
  			$http({
@@ -171,6 +219,21 @@ var ErpApp = angular.module("ErpApp", [
  			});
 
  		}
+ 		
+ 		$rootScope.getPRApprovalList = function(){
+
+ 			$http({
+ 				method: 'get',
+ 				url: 'api/getPRApprovalList',
+ 			}).then(function (response) {
+ 				$rootScope.prApprovalList= response.data.data;
+
+ 			}, function (response) {
+
+
+ 			});
+
+ 		}
 
  		$rootScope.logOut= function(){
  			window.location.href = 'login/logout/';
@@ -183,6 +246,11 @@ var ErpApp = angular.module("ErpApp", [
  			$rootScope.getAllProjectList();
  			$rootScope.getAllMaterialList();
  			$rootScope.getUserIdById();
+ 			$rootScope.getApproverList1();
+ 			$rootScope.getApproverList2();
+ 			$rootScope.getApproverList3();
+ 			$rootScope.getApproverList4();
+ 			$rootScope.getPRApprovalList();
  		}
  		
  	}]);
