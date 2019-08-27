@@ -79,7 +79,14 @@
 						<li><a href="">Balance Sheet</a></li>
 					</ul>
 				</li>
-				<li><a ui-sref="release">Release Strategy</a></li>
+				<li><a href="">Approval Setting</a>
+
+					<ul class="submenu">
+						<li><a ui-sref="documentType">Dcument Type</a></li>
+						<li><a ui-sref="release">Release Strategy</a></li>
+						
+					</ul>
+				</li>
 
 			</ul>
 		</nav>
