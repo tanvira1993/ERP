@@ -90,14 +90,14 @@ class RequisitionController extends Controller
 	
 	public function getAllRequisitionLists()
 	{
-		$requisitions = Requisitions::select('pr.*')->get();
+		$requisitions = Requisitions::with('material','project','document')->get();
 		return Response::json(['success' => true, 'data' => $requisitions], 200);
 	}
 
 	public function getRequisitionListsById(Request $request)
 	{
 		$id=$request->header('idUser');
-		$requisitions = Requisitions::select('pr.*')->where('user_id', $id)->get();
+		$requisitions = Requisitions::with('material','project','document')->where('user_id', $id)->get();
 		return Response::json(['success' => true, 'data' => $requisitions], 200);
 	}
 
