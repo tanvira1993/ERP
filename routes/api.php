@@ -76,9 +76,9 @@ Route::get('getApproverList3', 'ApprovalController@getLevelThreeApprovalList');
 Route::get('getApproverList4', 'ApprovalController@getLevelFourApprovalList');
 Route::get('getPRApprovalList', 'ApprovalController@getPRApprovalList');
 Route::get('getPRApprovalListById', 'ApprovalController@getPRApprovalListById');
-
-
-
+Route::post('createDocumentType', 'DocumentTypeController@saveDocumentType');
+Route::get('getAllDocumentLists', 'DocumentTypeController@getAlldocumentList');
+Route::get('getDocumentTypeById', 'DocumentTypeController@getDocumentTypeById');
 
 
 

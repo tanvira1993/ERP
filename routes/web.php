@@ -131,3 +131,7 @@ Route::get('/release', function () {
 	return view('release/release');
 });
 
+Route::get('/documentType', function () {
+	return view('release/documentType');
+});
+
