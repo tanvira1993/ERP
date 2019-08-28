@@ -62,7 +62,35 @@ input[type=submit]:hover {
 .qty {
   position: absolute;
   right: -5px;
-  top: -5px;
+  top: 12px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  font-size: 10px;
+  background: #F8694A;
+  color: #FFF;
+  border-radius: 50%;
+}
+
+.qty1 {
+  position: absolute;
+  right: 60px;
+  top: 52px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  font-size: 10px;
+  background: #F8694A;
+  color: #FFF;
+  border-radius: 50%;
+}
+
+.qty2 {
+  position: absolute;
+  right: 60px;
+  top: 73px;
   width: 18px;
   height: 18px;
   line-height: 18px;

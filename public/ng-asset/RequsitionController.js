@@ -33,6 +33,21 @@ angular.module('ErpApp').controller('RequsitionController', ['$scope', '$rootSco
 
 		}
 
+		
+		$scope.getAlldocumentList= function ()
+		{
+			$http({
+				method: 'get',
+				url: 'api/getAlldocumentList',
+			}).then(function (response) {
+				$rootScope.documentList= response.data.data;
+			}, 
+			function (response) {               
+
+			});
+		}
+
 		initSelect2Dropdown();   
+		$scope.getAlldocumentList();
 	});
 }]);

@@ -220,13 +220,13 @@ var ErpApp = angular.module("ErpApp", [
 
  		}
  		
- 		$rootScope.getPRApprovalList = function(){
+ 		$rootScope.getPRApprovedList = function(){
 
  			$http({
  				method: 'get',
- 				url: 'api/getPRApprovalList',
+ 				url: 'api/getPRApprovedList',
  			}).then(function (response) {
- 				$rootScope.prApprovalList= response.data.data;
+ 				$rootScope.prApprovedList= response.data.data;
 
  			}, function (response) {
 
@@ -250,7 +250,7 @@ var ErpApp = angular.module("ErpApp", [
  			$rootScope.getApproverList2();
  			$rootScope.getApproverList3();
  			$rootScope.getApproverList4();
- 			$rootScope.getPRApprovalList();
+ 			$rootScope.getPRApprovedList();
  		}
  		
  	}]);

@@ -7,6 +7,18 @@
 	<form id="requsition-form" name="requsitionForm" novalidate>
 		<div class="row">
 			<div class="label-design">
+				<label for="idDocument">Select Document</label>
+			</div>
+			<div class="col-75">				
+				<select name="idDocument" ng-model="requsitionInfo.idDocument" class="form-control select2dropdown">
+					<option value="">Select Document</option>
+					<option ng-repeat="(key, value) in documentList" value="@{{value.document_id}}">@{{value.document_name}}</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="label-design">
 				<label for="idProject">Select Project</label>
 			</div>
 			<div class="col-75">				

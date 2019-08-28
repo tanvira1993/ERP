@@ -25,11 +25,13 @@ class RequisitionController extends Controller
 			'idProject' => 'required |numeric',
 			'idMaterial' => 'required |numeric',
 			'quantity' => 'required |numeric',
+			'idDocument' => 'required |numeric',
 			'rName' => 'required',
 		];
 
 		$messages = [
 			'idProject.required' => 'Project is required!',
+			'idDocument.required' => 'Document Type is required!',
 			'idMaterial.required' => 'Material is required!',			
 			'quantity.required' => 'Quantity is required!',
 			'rName.required' => 'Name is required!',	
@@ -55,14 +57,14 @@ class RequisitionController extends Controller
 			$requisitions->quantity = $request->quantity;
 			$requisitions->requisition_name = $request->rName;
 			$requisitions->vedor_info = $request->vendor;
+			$requisitions->document_id = $request->idDocument;
 			$requisitions->user_id = $id;
-			$requisitions->document_id = 1;
 			$requisitions->l1 = 0;
 			$requisitions->l2 = 0;
 			$requisitions->l3 = 0;
 			$requisitions->l4 = 0;
 			$requisitionRelease = Releases::select('releases.*')
-			->where('document_id',1)
+			->where('document_id',$request->idDocument)
 			->where('project_id', $request->idProject)
 			->first();
 			$requisitions->release_id = $requisitionRelease->release_id;
@@ -90,14 +92,25 @@ class RequisitionController extends Controller
 	
 	public function getAllRequisitionLists()
 	{
-		$requisitions = Requisitions::with('material','project','document')->get();
+		$requisitions = Requisitions::with('material','project','document')
+		->where('pr.l1',0)		
+		->where('pr.l2',0)		
+		->where('pr.l3',0)		
+		->where('pr.l4',0)
+		->get();
 		return Response::json(['success' => true, 'data' => $requisitions], 200);
 	}
 
 	public function getRequisitionListsById(Request $request)
 	{
 		$id=$request->header('idUser');
-		$requisitions = Requisitions::with('material','project','document')->where('user_id', $id)->get();
+		$requisitions = Requisitions::with('material','project','document')
+		->where('pr.l1',0)		
+		->where('pr.l2',0)		
+		->where('pr.l3',0)		
+		->where('pr.l4',0)
+		->where('user_id', $id)
+		->get();
 		return Response::json(['success' => true, 'data' => $requisitions], 200);
 	}
 

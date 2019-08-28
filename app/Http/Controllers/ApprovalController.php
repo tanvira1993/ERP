@@ -71,98 +71,297 @@ class ApprovalController extends Controller
 		return Response::json(['success' => true, 'data' => $four], 200);
 	}
 
-	public function getPRApprovalListById(Request $request)
+	
+	public function getPRApprovedListById(Request $request)
 	{
-		$id=$request->header('idUser');		
+		$id=$request->header('idUser');	
 		$checkLevel = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
-		->select('releases.release_level');
-		if( $checkLevel->release_level==1)
-		{
-			$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
-			->where('pr.l1',1)		
-			->where('pr.l2',0)		
-			->where('pr.l3',0)		
-			->where('pr.l4',0)
-			->where('pr.user_id',$id)
-			->get();			
-		}
+		->select('releases.release_level')		
+		->get()
+		->toArray();
+		$approvePr=null;
+		/*echo '<pre>';
+		print_r($checkLevel);
+		echo '</pre>';
+		exit;*/
 
-		if( $checkLevel->release_level==2)
+		if (isset($checkLevel))
 		{
-			$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
-			->where('pr.l1',1)		
-			->where('pr.l2',1)		
-			->where('pr.l3',0)		
-			->where('pr.l4',0)
-			->where('pr.user_id',$id)
-			->get();			
-		}
+			foreach ($checkLevel as $value) {
+				
+				
 
-		if( $checkLevel->release_level==3)
-		{
-			$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
-			->where('pr.l1',1)		
-			->where('pr.l2',1)		
-			->where('pr.l3',1)		
-			->where('pr.l4',0)
-			->where('pr.user_id',$id)
-			->get();			
+				if( $value['release_level']==1)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',0)		
+					->where('pr.l3',0)		
+					->where('pr.l4',0)
+					->where('pr.user_id',$id)					
+					->get();			
+				}
+
+				if( $value['release_level']==2)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',1)		
+					->where('pr.l3',0)		
+					->where('pr.l4',0)
+					->where('pr.user_id',$id)					
+					->get();			
+				}
+
+				if( $value['release_level']==3)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',1)		
+					->where('pr.l3',1)		
+					->where('pr.l4',0)
+					->where('pr.user_id',$id)					
+					->get();			
+				}
+				if($value['release_level']==4)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',1)		
+					->where('pr.l3',1)		
+					->where('pr.l4',1)
+					->where('pr.user_id',$id)					
+					->get();			
+				}
+
+			}
+
 		}
-		if( $checkLevel->release_level==4)
+		else
 		{
-			$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
-			->where('pr.l1',1)		
-			->where('pr.l2',1)		
-			->where('pr.l3',1)		
-			->where('pr.l4',1)
-			->where('pr.user_id',$id)
-			->get();			
+			$approvePr=null;
+			/*echo '<pre>';
+			print_r($approvePr);
+			echo '</pre>';
+			exit;*/
 		}
 		return Response::json(['success' => true, 'data' => $approvePr], 200);
 	}
 
-	public function getPRApprovalList(Request $request)
+	public function getPRApprovedList(Request $request)
 	{
 		$checkLevel = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
-		->select('releases.release_level')
-		->first();
-		if( $checkLevel->release_level==1)
-		{
-			$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
-			->where('pr.l1',1)		
-			->where('pr.l2',0)		
-			->where('pr.l3',0)		
-			->where('pr.l4',0)
-			->get();			
-		}
+		->select('releases.release_level')		
+		->get()
+		->toArray();
+		$approvePr=null;
+		/*echo '<pre>';
+		print_r($checkLevel);
+		echo '</pre>';
+		exit;*/
 
-		if( $checkLevel->release_level==2)
+		if (isset($checkLevel))
 		{
-			$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
-			->where('pr.l1',1)		
-			->where('pr.l2',1)		
-			->where('pr.l3',0)		
-			->where('pr.l4',0)
-			->get();			
-		}
+			foreach ($checkLevel as $value) {
+				
+				
 
-		if( $checkLevel->release_level==3)
-		{
-			$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
-			->where('pr.l1',1)		
-			->where('pr.l2',1)		
-			->where('pr.l3',1)		
-			->where('pr.l4',0)
-			->get();			
+				if( $value['release_level']==1)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',0)		
+					->where('pr.l3',0)		
+					->where('pr.l4',0)
+					->get();			
+				}
+
+				if( $value['release_level']==2)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',1)		
+					->where('pr.l3',0)		
+					->where('pr.l4',0)
+					->get();			
+				}
+
+				if( $value['release_level']==3)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',1)		
+					->where('pr.l3',1)		
+					->where('pr.l4',0)
+					->get();			
+				}
+				if($value['release_level']==4)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',1)		
+					->where('pr.l3',1)		
+					->where('pr.l4',1)
+					->get();			
+				}
+
+			}
+
 		}
-		if( $checkLevel->release_level==4)
+		else
 		{
-			$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
-			->where('pr.l1',1)		
-			->where('pr.l2',1)		
-			->where('pr.l3',1)		
-			->where('pr.l4',1)
-			->get();			
+			$approvePr=null;
+			/*echo '<pre>';
+			print_r($approvePr);
+			echo '</pre>';
+			exit;*/
+		}
+		return Response::json(['success' => true, 'data' => $approvePr], 200);
+	}
+
+	public function getPRRejectedList(Request $request)
+	{
+		$checkLevel = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+		->select('releases.release_level')		
+		->get()
+		->toArray();
+		$approvePr=null;
+		/*echo '<pre>';
+		print_r($checkLevel);
+		echo '</pre>';
+		exit;*/
+
+		if (isset($checkLevel))
+		{
+			foreach ($checkLevel as $value) {
+				
+				
+
+				if( $value['release_level']==1)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',-1)		
+					->where('pr.l2',0)		
+					->where('pr.l3',0)		
+					->where('pr.l4',0)
+					->get();			
+				}
+
+				if( $value['release_level']==2)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',-1)		
+					->where('pr.l3',0)		
+					->where('pr.l4',0)
+					->get();			
+				}
+
+				if( $value['release_level']==3)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',1)		
+					->where('pr.l3',-1)		
+					->where('pr.l4',0)
+					->get();			
+				}
+				if($value['release_level']==4)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',1)		
+					->where('pr.l3',1)		
+					->where('pr.l4',-1)
+					->get();			
+				}
+
+			}
+
+		}
+		else
+		{
+			$approvePr=null;
+			/*echo '<pre>';
+			print_r($approvePr);
+			echo '</pre>';
+			exit;*/
+		}
+		return Response::json(['success' => true, 'data' => $approvePr], 200);
+	}
+
+	public function getPRRejectedListById(Request $request)
+	{
+		$id=$request->header('idUser');			
+		$checkLevel = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+		->select('releases.release_level')		
+		->get()
+		->toArray();
+		$approvePr=null;
+		/*echo '<pre>';
+		print_r($checkLevel);
+		echo '</pre>';
+		exit;*/
+
+		if (isset($checkLevel))
+		{
+			foreach ($checkLevel as $value) {
+				
+				
+
+				if( $value['release_level']==1)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',-1)		
+					->where('pr.l2',0)		
+					->where('pr.l3',0)		
+					->where('pr.l4',0)
+					->where('pr.user_id',$id)
+					->get();			
+				}
+
+				if( $value['release_level']==2)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',-1)		
+					->where('pr.l3',0)		
+					->where('pr.l4',0)
+					->where('pr.user_id',$id)					
+					->get();			
+				}
+
+				if( $value['release_level']==3)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',1)		
+					->where('pr.l3',-1)		
+					->where('pr.l4',0)
+					->where('pr.user_id',$id)
+					->get();			
+				}
+				if($value['release_level']==4)
+				{
+					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->where('pr.l1',1)		
+					->where('pr.l2',1)		
+					->where('pr.l3',1)		
+					->where('pr.l4',-1)
+					->where('pr.user_id',$id)					
+					->get();			
+				}
+
+			}
+
+		}
+		else
+		{
+			$approvePr=null;
+			/*echo '<pre>';
+			print_r($approvePr);
+			echo '</pre>';
+			exit;*/
 		}
 		return Response::json(['success' => true, 'data' => $approvePr], 200);
 	}
