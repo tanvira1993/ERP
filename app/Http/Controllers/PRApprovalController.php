@@ -18,7 +18,7 @@ use Response;
 use DB;
 use Validator;
 
-class ApprovalController extends Controller
+class PRApprovalController extends Controller
 {
 
 	public function getLevelOneApprovalList(Request $request)
