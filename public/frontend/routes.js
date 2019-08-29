@@ -533,7 +533,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
 .state('documentType', {
         url: "/documentType",
         templateUrl: "/documentType",
-        data: {pageTitle: 'documentType'},
+        data: {pageTitle: 'Document Type'},
         controller: "DocumentTypeController",
         resolve: {
             deps: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -542,6 +542,162 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
                     insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                     files: [
                     'ng-asset/DocumentTypeController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+.state('prReleaseApproveState', {
+        url: "/prReleaseApproveState",
+        templateUrl: "/prReleaseApproveState",
+        data: {pageTitle: 'PR Release Stage'},
+        controller: "PrReleaseApproveStateController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/PrReleaseApproveStateController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+.state('poReleaseApproveState', {
+        url: "/poReleaseApproveState",
+        templateUrl: "/poReleaseApproveState",
+        data: {pageTitle: 'PO Release Stage'},
+        controller: "PoReleaseApproveStateController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/PoReleaseApproveStateController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+.state('prReleaseStateDetails', {
+        url: "/prReleaseStateDetails",
+        templateUrl: "/prReleaseStateDetails",
+        data: {pageTitle: 'PR Release State Details'},
+        controller: "PrReleaseStateDetailsController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/PrReleaseStateDetailsController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+.state('poReleaseStateDetails', {
+        url: "/poReleaseStateDetails",
+        templateUrl: "/poReleaseStateDetails",
+        data: {pageTitle: 'PO Release State Details'},
+        controller: "PoReleaseStateDetailsController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/PoReleaseStateDetailsController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+
+
+
+
+.state('materialInventoryReport', {
+        url: "/materialInventoryReport",
+        templateUrl: "/materialInventoryReport",
+        data: {pageTitle: 'Material Inventory Report'},
+        controller: "MaterialInventoryReportController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/MaterialInventoryReportController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+
+.state('projectInventoryReport', {
+        url: "/projectInventoryReport",
+        templateUrl: "/projectInventoryReport",
+        data: {pageTitle: 'Project Inventory Report'},
+        controller: "ProjectInventoryReportController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/ProjectInventoryReportController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+.state('accountingReport', {
+        url: "/accountingReport",
+        templateUrl: "/accountingReport",
+        data: {pageTitle: 'Accounting Report'},
+        controller: "AccountingReportController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/AccountingReportController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+.state('vendorReport', {
+        url: "/vendorReport",
+        templateUrl: "/vendorReport",
+        data: {pageTitle: 'Vendor Report'},
+        controller: "VendorReportController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/VendorReportController.js'
                     ]
                 });
             }]

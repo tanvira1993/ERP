@@ -135,3 +135,37 @@ Route::get('/documentType', function () {
 	return view('release/documentType');
 });
 
+Route::get('/prReleaseApproveState', function () {
+	return view('release/prReleaseApproveState');
+});
+
+
+Route::get('/poReleaseApproveState', function () {
+	return view('release/poReleaseApproveState');
+});
+
+Route::get('/prReleaseStateDetails', function () {
+	return view('release/prReleaseStateDetails');
+});
+
+Route::get('/poReleaseStateDetails', function () {
+	return view('release/poReleaseStateDetails');
+});
+
+
+
+Route::get('/materialInventoryReport', function () {
+	return view('reports/materialInventoryReport');
+});
+
+Route::get('/projectInventoryReport', function () {
+	return view('reports/projectInventoryReport');
+});
+
+Route::get('/accountingReport', function () {
+	return view('reports/accountingReport');
+});
+
+Route::get('/vendorReport', function () {
+	return view('reports/vendorReport');
+});

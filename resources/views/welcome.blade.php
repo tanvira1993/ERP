@@ -28,8 +28,8 @@
 					<ul style="background-color: #D7D2D2;" class=" dropdown-menu" >
 						<li ><a ui-sref="passwordReset">Password Reset</a></li>
 						<li ng-if="idUserRole==0"style="cursor: pointer;"><a ui-sref="adminPasswordReset">Force Reset</a></li>
-						<li style="cursor: pointer;"><a ui-sref="">Approve PO<span class="qty1" ng-if="vendorList.length>0">@{{vendorList.length}}</span></a></li>
-						<li style="cursor: pointer;"><a ui-sref="">Approve PR<span class="qty2" ng-if="vendorList.length>0">@{{vendorList.length}}</span></a></li>			
+						<li style="cursor: pointer;"><a ui-sref="poReleaseApproveState">Approve PO<span class="qty1" ng-if="vendorList.length>0">@{{vendorList.length}}</span></a></li>
+						<li style="cursor: pointer;"><a ui-sref="prReleaseApproveState">Approve PR<span class="qty2" ng-if="vendorList.length>0">@{{vendorList.length}}</span></a></li>			
 						<li style="cursor: pointer;"><a ng-click="logOut()">Logout</a></li>
 
 					</ul>
@@ -75,10 +75,10 @@
 				</li>
 				<li><a href="">Report</a>
 					<ul class="submenu">
-						<li><a href="">Vendor Report</a></li>
-						<li><a href="">Material Report</a></li>
-						<li><a href="">Project Report</a></li>
-						<li><a href="">Balance Sheet</a></li>
+						<li><a ui-sref="vendorReport">Vendor Report</a></li>
+						<li><a ui-sref="materialInventoryReport">Material Inventory</a></li>
+						<li><a ui-sref="projectInventoryReport">Project Inventory</a></li>
+						<li><a ui-sref="accountingReport">Accounting</a></li>
 					</ul>
 				</li>
 				<li><a href="">Approval Setting</a>
