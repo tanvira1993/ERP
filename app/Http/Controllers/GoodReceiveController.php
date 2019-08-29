@@ -11,6 +11,7 @@ use App\Vendors;
 use App\Customers;
 use App\Requisitions;
 use App\GoodReceives;
+use App\CurrentStock;
 use Response;
 use DB;
 use Validator;
@@ -51,15 +52,23 @@ class GoodReceiveController extends Controller
 		try {
 			$id=$request->header('idUser');
 
-            $goodReceive = new GoodReceives;
+			$goodReceive = new GoodReceives;
 			$goodReceive->project_id = $request->idProject;
 			$goodReceive->material_id = $request->idMaterial;
 			$goodReceive->vendor_id = $request->idVendor;
 			$goodReceive->quantity = $request->quantity;
 			$goodReceive->price = $request->price;
 			$goodReceive->user_id = $id;
+
+			$stockUpdate = new CurrentStock;
+			$stockUpdate->project_id = $request->idProject;
+			$stockUpdate->material_id = $request->idMaterial;
+			$stockUpdate->vendor_id = $request->idVendor;
+			$stockUpdate->quantity = $request->quantity;
+			$stockUpdate->price = $request->price;
+			$stockUpdate->user_id = $id;
 			
-			if($goodReceive->save()){
+			if(($goodReceive->save()) && ($stockUpdate->save())){
 				DB::commit();
 				return Response::json(array('success' => TRUE, 'data' => $goodReceive), 200);
 			}

@@ -14,6 +14,7 @@ use App\GoodReceives;
 use App\ConsumeMaterials;
 use App\TransferMaterials;
 use App\RejectGoods;
+use App\CurrentStock;
 use Response;
 use DB;
 use Validator;
@@ -30,7 +31,7 @@ class RejectGoodController extends Controller
 			'quantity' => 'required |numeric',
 			'price' => 'required |numeric',
 			'remarks' => 'required',
-			];
+		];
 
 		$messages = [
 			'idProject.required' => 'Project is required!',
@@ -54,17 +55,41 @@ class RejectGoodController extends Controller
 		try {
 			$id=$request->header('idUser');
 
-            $rejectGood = new RejectGoods;
+			$rejectGood = new RejectGoods;
 			$rejectGood->project_id = $request->idProject;
 			$rejectGood->material_id = $request->idMaterial;
 			$rejectGood->quantity = $request->quantity;
 			$rejectGood->price = $request->price;
 			$rejectGood->remarks = $request->remarks;
 			$rejectGood->user_id = $id;
-			
-			if($rejectGood->save()){
-				DB::commit();
-				return Response::json(array('success' => TRUE, 'data' => $rejectGood), 200);
+
+			$stockData=CurrentStock::select('current_stock.*')
+			->where('project_id',$rejectGood->project_id)
+			->where('material_id',$rejectGood->material_id)
+			->first(); 
+
+			$reject=$rejectGood->quantity;
+			/*echo '<pre>';
+			print_r($stockData);
+			echo '</pre>';
+			exit;*/
+			$stock=$stockData->quantity;
+			if($stock>=$reject)
+			{
+				$stockUpdate = CurrentStock:: find($stockData->current_stock_id);			
+				$stockUpdate->quantity = ($stock-$reject);
+				$stockUpdate->user_id = $id;
+
+				if(($rejectGood->save()) && ($stockUpdate->save())){
+					DB::commit();
+					return Response::json(array('success' => TRUE, 'data' => $rejectGood), 200);
+				}
+
+				else{
+
+					DB::rollback();
+					return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Reject Good could can not be done!'), 400);
+				}
 			}
 
 			else{
@@ -73,7 +98,7 @@ class RejectGoodController extends Controller
 				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Reject Good could can not be done!'), 400);
 			}
 		}
-		
+
 		catch (\Exception $e) {
 			echo $e;
 			DB::rollback();
@@ -82,7 +107,7 @@ class RejectGoodController extends Controller
 
 	}
 
-	
+
 	public function getRejectGoodsLists()
 	{
 		$rejectGood = RejectGoods::select('reject_goods.*')->get();
