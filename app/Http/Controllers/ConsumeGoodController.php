@@ -11,6 +11,7 @@ use App\Vendors;
 use App\Customers;
 use App\Requisitions;
 use App\GoodReceives;
+use App\CurrentStock;
 use App\ConsumeMaterials;
 use Response;
 use DB;
@@ -26,7 +27,7 @@ class ConsumeGoodController extends Controller
 			'idProject' => 'required |numeric',
 			'idMaterial' => 'required |numeric',
 			'quantity' => 'required |numeric',
-			];
+		];
 
 		$messages = [
 			'idProject.required' => 'Project is required!',
@@ -49,15 +50,42 @@ class ConsumeGoodController extends Controller
 		try {
 			$id=$request->header('idUser');
 
-            $consumeGood = new ConsumeMaterials;
+			$consumeGood = new ConsumeMaterials;
 			$consumeGood->project_id = $request->idProject;
 			$consumeGood->material_id = $request->idMaterial;
 			$consumeGood->quantity = $request->quantity;
 			$consumeGood->user_id = $id;
+
 			
-			if($consumeGood->save()){
-				DB::commit();
-				return Response::json(array('success' => TRUE, 'data' => $consumeGood), 200);
+
+			$stockData=CurrentStock::select('current_stock.*')
+			->where('project_id',$consumeGood->project_id)
+			->where('material_id',$consumeGood->material_id)
+			->first();
+
+			$consume=$consumeGood->quantity;
+			/*echo '<pre>';
+			print_r($stockData);
+			echo '</pre>';
+			exit;*/
+			$stock=$stockData->quantity;
+
+			if($stock>=$consume)
+			{
+				$stockUpdate = CurrentStock:: find($stockData->current_stock_id);			
+				$stockUpdate->quantity = ($stock-$consume);
+				$stockUpdate->user_id = $id;
+
+				if(($consumeGood->save()) && ($stockUpdate->save())){
+					DB::commit();
+					return Response::json(array('success' => TRUE, 'data' => $consumeGood), 200);
+				}
+
+				else{
+
+					DB::rollback();
+					return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Consume Good could can not be issued!'), 400);
+				}
 			}
 
 			else{
@@ -68,7 +96,7 @@ class ConsumeGoodController extends Controller
 		}
 		
 		catch (\Exception $e) {
-			echo $e;
+			// echo $e;
 			DB::rollback();
 			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Consume Good could can not be issued!'), 400);
 		}	

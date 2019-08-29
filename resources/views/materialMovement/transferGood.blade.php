@@ -18,7 +18,7 @@
 		</div>
 
 
-			<div class="row">
+		<div class="row">
 			<div class="label-design">
 				<label for="idProjectR"> Select Receive Project</label>
 			</div>
@@ -50,6 +50,15 @@
 			</div>     
 			<div class="col-75">				        
 				<input type="number"  name="quantity" ng-model="transferGoodInfo.quantity" placeholder="">
+			</div>
+		</div>
+
+		<div class="row">  
+			<div class="label-design">
+				<label for="lostQuantity">Lost Quantity</label>
+			</div>     
+			<div class="col-75">				        
+				<input type="number"  name="lostQuantity" ng-model="transferGoodInfo.lostQuantity" placeholder="">
 			</div>
 		</div>
 
