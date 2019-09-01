@@ -67,17 +67,36 @@ class RequisitionController extends Controller
 			->where('document_id',$request->idDocument)
 			->where('project_id', $request->idProject)
 			->first();
-			$requisitions->release_id = $requisitionRelease->release_id;
+			if(isset($$requisitionRelease))
+			{
+				$requisitions->release_id = $requisitionRelease->release_id;
 
-			if($requisitions->save()){
-				DB::commit();
-				return Response::json(array('success' => TRUE, 'data' => $requisitions), 200);
+				if($requisitions->save()){
+					DB::commit();
+					return Response::json(array('success' => TRUE, 'data' => $requisitions), 200);
+				}
+
+				else{
+
+					DB::rollback();
+					return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Requisitions could can not be created!'), 400);
+				}
+
+
 			}
-
 			else{
+				$requisitions->release_id = 0;
 
-				DB::rollback();
-				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Requisitions could can not be created!'), 400);
+				if($requisitions->save()){
+					DB::commit();
+					return Response::json(array('success' => TRUE, 'data' => $requisitions), 200);
+				}
+
+				else{
+
+					DB::rollback();
+					return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Requisitions could can not be created!'), 400);
+				}
 			}
 		}
 		
