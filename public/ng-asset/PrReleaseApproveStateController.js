@@ -55,6 +55,11 @@ angular.module('ErpApp').controller('PrReleaseApproveStateController', ['$scope'
 
 		}
 
+		$rootScope.getApproverList1();
+		$rootScope.getApproverList2();
+		$rootScope.getApproverList3();
+		$rootScope.getApproverList4();
+
 
 
 	});
