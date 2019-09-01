@@ -26,6 +26,9 @@ class PRApprovalController extends Controller
 		$z=0;
 		$id=$request->header('idUser');		
 		$one = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+		->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+		->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+		->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 		->where('pr.l1',$z)
 		->where('pr.l2',$z)
 		->where('pr.l3',$z)
@@ -38,6 +41,9 @@ class PRApprovalController extends Controller
 	{
 		$id=$request->header('idUser');
 		$two = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+		->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+		->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+		->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 		->where('pr.l1',1)		
 		->where('pr.l2',0)		
 		->where('pr.l3',0)		
@@ -50,6 +56,9 @@ class PRApprovalController extends Controller
 	{
 		$id=$request->header('idUser');
 		$three = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+		->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+		->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+		->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 		->where('pr.l1',1)		
 		->where('pr.l2',1)		
 		->where('pr.l3',0)		
@@ -62,6 +71,9 @@ class PRApprovalController extends Controller
 	{
 		$id=$request->header('idUser');
 		$four = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+		->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+		->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+		->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 		->where('pr.l1',1)		
 		->where('pr.l2',1)		
 		->where('pr.l3',1)		
@@ -364,6 +376,186 @@ class PRApprovalController extends Controller
 			exit;*/
 		}
 		return Response::json(['success' => true, 'data' => $approvePr], 200);
+	}
+
+	public function makeApprove( Request $request, $pr,$l1,$l2,$l3,$l4)
+	{
+
+		/*echo '<pre>';
+		print_r($l4);
+		echo '</pre>';
+		exit;*/
+		$id=$request->header('idUser');
+		$check=Requisitions::leftJoin('releases', 'pr.release_id', '=', 'releases.release_id')
+		->where('pr.pr_id', $pr)
+		->select('releases.*')
+		->first();
+
+		if($l1==0 && $l2==0 && $l3==0 && $l4==0 && $check->user_id_l1==$id)
+		{
+			$prApprove = Requisitions:: find($pr);
+			$prApprove->l1 = 1;
+
+			if($prApprove->save()){
+				DB::commit();
+				return Response::json(array('success' => TRUE, 'data' => $prApprove), 200);
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Approve could can not be done!'), 400);
+			}
+		}
+
+		if($l1==1 && $l2==0 && $l3==0 && $l4==0 && $check->user_id_l2==$id)
+		{
+			$prApprove = Requisitions:: find($pr);
+			$prApprove->l2 = 1;
+
+			if($prApprove->save()){
+				DB::commit();
+				return Response::json(array('success' => TRUE, 'data' => $prApprove), 200);
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Approve could can not be done!'), 400);
+			}
+		}
+
+		if($l1==1 && $l2==1 && $l3==0 && $l4==0 && $check->user_id_l3==$id)
+		{
+			$prApprove = Requisitions:: find($pr);
+			$prApprove->l3 = 1;
+
+			if($prApprove->save()){
+				DB::commit();
+				return Response::json(array('success' => TRUE, 'data' => $prApprove), 200);
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Approve could can not be done!'), 400);
+			}
+		}
+
+		if($l1==1 && $l2==1 && $l3==1 && $l4==0 && $check->user_id_l4==$id)
+		{
+			$prApprove = Requisitions:: find($pr);
+			$prApprove->l4= 1;
+
+			if($prApprove->save()){
+				DB::commit();
+				return Response::json(array('success' => TRUE, 'data' => $prApprove), 200);
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Approve could can not be done!'), 400);
+			}
+		}
+		
+		else
+		{
+
+			DB::rollback();
+			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Not Approved..!'), 400);
+		}
+
+	}
+
+	public function makeReject( Request $request, $pr,$l1,$l2,$l3,$l4)
+	{
+
+		/*echo '<pre>';
+		print_r($l4);
+		echo '</pre>';
+		exit;*/
+		$id=$request->header('idUser');
+		$check=Requisitions::leftJoin('releases', 'pr.release_id', '=', 'releases.release_id')
+		->where('pr.pr_id', $pr)
+		->select('releases.*')
+		->first();
+
+		if($l1==0 && $l2==0 && $l3==0 && $l4==0 && $check->user_id_l1==$id)
+		{
+			$prReject = Requisitions:: find($pr);
+			$prReject->l1 = -1;
+
+			if($prReject->save()){
+				DB::commit();
+				return Response::json(array('success' => TRUE, 'data' => $prReject), 200);
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Reject could can not be done!'), 400);
+			}
+		}
+
+		if($l1==1 && $l2==0 && $l3==0 && $l4==0 && $check->user_id_l2==$id)
+		{
+			$prReject = Requisitions:: find($pr);
+			$prReject->l2 = -1;
+
+			if($prReject->save()){
+				DB::commit();
+				return Response::json(array('success' => TRUE, 'data' => $prReject), 200);
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Reject could can not be done!'), 400);
+			}
+		}
+
+		if($l1==1 && $l2==1 && $l3==0 && $l4==0 && $check->user_id_l3==$id)
+		{
+			$prReject = Requisitions:: find($pr);
+			$prReject->l3 = -1;
+
+			if($prReject->save()){
+				DB::commit();
+				return Response::json(array('success' => TRUE, 'data' => $prReject), 200);
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Reject could can not be done!'), 400);
+			}
+		}
+
+		if($l1==1 && $l2==1 && $l3==1 && $l4==0 && $check->user_id_l4==$id)
+		{
+			$prReject = Requisitions:: find($pr);
+			$prReject->l4= -1;
+
+			if($prReject->save()){
+				DB::commit();
+				return Response::json(array('success' => TRUE, 'data' => $prReject), 200);
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Reject could can not be done!'), 400);
+			}
+		}
+		
+		else
+		{
+
+			DB::rollback();
+			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Not Approved..!'), 400);
+		}
+
 	}
 
 }

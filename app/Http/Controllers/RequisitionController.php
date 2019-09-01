@@ -92,7 +92,10 @@ class RequisitionController extends Controller
 	
 	public function getAllRequisitionLists()
 	{
-		$requisitions = Requisitions::with('material','project','document')
+		$requisitions = Requisitions::leftJoin('document_types', 'pr.document_id', '=', 'document_types.document_id')
+		->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+		->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+		->select('projects.name AS Pname', 'materials.*','pr.*','document_types.*') 
 		->where('pr.l1',0)		
 		->where('pr.l2',0)		
 		->where('pr.l3',0)		
@@ -104,12 +107,15 @@ class RequisitionController extends Controller
 	public function getRequisitionListsById(Request $request)
 	{
 		$id=$request->header('idUser');
-		$requisitions = Requisitions::with('material','project','document')
+		$requisitions = Requisitions::leftJoin('document_types', 'pr.document_id', '=', 'document_types.document_id')
+		->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+		->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+		->select('projects.name AS Pname', 'materials.*','pr.*','document_types.*') 
 		->where('pr.l1',0)		
 		->where('pr.l2',0)		
 		->where('pr.l3',0)		
 		->where('pr.l4',0)
-		->where('user_id', $id)
+		->where('pr.user_id', $id)
 		->get();
 		return Response::json(['success' => true, 'data' => $requisitions], 200);
 	}

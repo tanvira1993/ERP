@@ -530,7 +530,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
 
 
 
-.state('documentType', {
+    .state('documentType', {
         url: "/documentType",
         templateUrl: "/documentType",
         data: {pageTitle: 'Document Type'},
@@ -549,7 +549,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
-.state('prReleaseApproveState', {
+    .state('prReleaseApproveState', {
         url: "/prReleaseApproveState",
         templateUrl: "/prReleaseApproveState",
         data: {pageTitle: 'PR Release Stage'},
@@ -568,7 +568,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
-.state('poReleaseApproveState', {
+    .state('poReleaseApproveState', {
         url: "/poReleaseApproveState",
         templateUrl: "/poReleaseApproveState",
         data: {pageTitle: 'PO Release Stage'},
@@ -587,8 +587,8 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
-.state('prReleaseStateDetails', {
-        url: "/prReleaseStateDetails",
+    .state('prReleaseStateDetails', {
+        url: "/prReleaseStateDetails/{id}",
         templateUrl: "/prReleaseStateDetails",
         data: {pageTitle: 'PR Release State Details'},
         controller: "PrReleaseStateDetailsController",
@@ -606,7 +606,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
-.state('poReleaseStateDetails', {
+    .state('poReleaseStateDetails', {
         url: "/poReleaseStateDetails",
         templateUrl: "/poReleaseStateDetails",
         data: {pageTitle: 'PO Release State Details'},
@@ -629,7 +629,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
 
 
 
-.state('materialInventoryReport', {
+    .state('materialInventoryReport', {
         url: "/materialInventoryReport",
         templateUrl: "/materialInventoryReport",
         data: {pageTitle: 'Material Inventory Report'},
@@ -649,7 +649,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
 
 
 
-.state('projectInventoryReport', {
+    .state('projectInventoryReport', {
         url: "/projectInventoryReport",
         templateUrl: "/projectInventoryReport",
         data: {pageTitle: 'Project Inventory Report'},
@@ -667,7 +667,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
         }
     })
 
-.state('accountingReport', {
+    .state('accountingReport', {
         url: "/accountingReport",
         templateUrl: "/accountingReport",
         data: {pageTitle: 'Accounting Report'},
@@ -686,7 +686,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
-.state('vendorReport', {
+    .state('vendorReport', {
         url: "/vendorReport",
         templateUrl: "/vendorReport",
         data: {pageTitle: 'Vendor Report'},

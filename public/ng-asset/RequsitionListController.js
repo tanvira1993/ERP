@@ -29,6 +29,6 @@ angular.module('ErpApp').controller('RequsitionListController', ['$scope', '$roo
         }
 
         $scope.requsitionListById();
-        $scope.requsitionList();        
+        // $scope.requsitionList();        
     });
 }]);
