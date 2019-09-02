@@ -81,7 +81,8 @@ Route::get('getAllDocumentLists', 'DocumentTypeController@getAlldocumentList');
 Route::get('getDocumentTypeById', 'DocumentTypeController@getDocumentTypeById');
 Route::post('prApprove/{id}/{id1}/{id2}/{id3}/{id4}', 'PRApprovalController@makeApprove');
 Route::post('prReject/{id}/{id1}/{id2}/{id3}/{id4}', 'PRApprovalController@makeReject');
-
+Route::get('getPrRejectListById', 'PRApprovalController@getPRRejectedListById');
+Route::get('getPrAllRejectList', 'PRApprovalController@getPRRejectedList');
 
 
 
