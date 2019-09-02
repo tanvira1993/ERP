@@ -106,6 +106,9 @@ class PRApprovalController extends Controller
 				if( $value['release_level']==1)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',0)		
 					->where('pr.l3',0)		
@@ -117,6 +120,9 @@ class PRApprovalController extends Controller
 				if( $value['release_level']==2)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',1)		
 					->where('pr.l3',0)		
@@ -128,6 +134,9 @@ class PRApprovalController extends Controller
 				if( $value['release_level']==3)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',1)		
 					->where('pr.l3',1)		
@@ -138,6 +147,9 @@ class PRApprovalController extends Controller
 				if($value['release_level']==4)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',1)		
 					->where('pr.l3',1)		
@@ -181,6 +193,9 @@ class PRApprovalController extends Controller
 				if( $value['release_level']==1)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',0)		
 					->where('pr.l3',0)		
@@ -191,6 +206,9 @@ class PRApprovalController extends Controller
 				if( $value['release_level']==2)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',1)		
 					->where('pr.l3',0)		
@@ -201,6 +219,9 @@ class PRApprovalController extends Controller
 				if( $value['release_level']==3)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',1)		
 					->where('pr.l3',1)		
@@ -210,6 +231,9 @@ class PRApprovalController extends Controller
 				if($value['release_level']==4)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',1)		
 					->where('pr.l3',1)		
@@ -252,6 +276,9 @@ class PRApprovalController extends Controller
 				if( $value['release_level']==1)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',-1)		
 					->where('pr.l2',0)		
 					->where('pr.l3',0)		
@@ -262,6 +289,9 @@ class PRApprovalController extends Controller
 				if( $value['release_level']==2)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',-1)		
 					->where('pr.l3',0)		
@@ -272,6 +302,9 @@ class PRApprovalController extends Controller
 				if( $value['release_level']==3)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',1)		
 					->where('pr.l3',-1)		
@@ -281,6 +314,9 @@ class PRApprovalController extends Controller
 				if($value['release_level']==4)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',1)		
 					->where('pr.l3',1)		
@@ -324,6 +360,9 @@ class PRApprovalController extends Controller
 				if( $value['release_level']==1)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',-1)		
 					->where('pr.l2',0)		
 					->where('pr.l3',0)		
@@ -335,6 +374,9 @@ class PRApprovalController extends Controller
 				if( $value['release_level']==2)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',-1)		
 					->where('pr.l3',0)		
@@ -346,6 +388,9 @@ class PRApprovalController extends Controller
 				if( $value['release_level']==3)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',1)		
 					->where('pr.l3',-1)		
@@ -356,6 +401,9 @@ class PRApprovalController extends Controller
 				if($value['release_level']==4)
 				{
 					$approvePr = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+					->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+					->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+					->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
 					->where('pr.l1',1)		
 					->where('pr.l2',1)		
 					->where('pr.l3',1)		
@@ -556,6 +604,19 @@ class PRApprovalController extends Controller
 			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Not Approved..!'), 400);
 		}
 
+	}
+
+	public function getPrStateInfoListById(Request $request, $id)
+	{
+		$prStateInfo = Releases::leftJoin('pr', 'pr.release_id', '=', 'releases.release_id')
+		->leftJoin('projects', 'pr.project_id', '=', 'projects.project_id')
+		->leftJoin('materials', 'pr.material_id', '=', 'materials.material_id')
+		->select('projects.name AS Pname', 'materials.*','pr.*','releases.*')
+		->where('pr_id',$id)
+		->first();
+
+		return Response::json(['success' => true, 'data' => $prStateInfo], 200);
+		
 	}
 
 }
