@@ -178,3 +178,5 @@ Route::post('prReject/{id}/{id1}/{id2}/{id3}/{id4}', 'PRApprovalController@makeR
 //Tanvir Portion
 Route::get('getAllUserId', 'UserCredentialController@getAllUserId');
 Route::post('adminResetPass', 'UserCredentialController@adminResetPassword');
+Route::get('getPrStateInfoListById/{id}', 'PRApprovalController@getPrStateInfoListById');
+

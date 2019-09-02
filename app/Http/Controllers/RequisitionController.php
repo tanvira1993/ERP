@@ -67,7 +67,7 @@ class RequisitionController extends Controller
 			->where('document_id',$request->idDocument)
 			->where('project_id', $request->idProject)
 			->first();
-			if(isset($$requisitionRelease))
+			if(isset($requisitionRelease))
 			{
 				$requisitions->release_id = $requisitionRelease->release_id;
 
