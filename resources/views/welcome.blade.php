@@ -50,8 +50,8 @@
 				<li><a href="">Requsition</a>
 					<ul class="submenu">
 						<li><a ui-sref="requsition">Raise</a></li>
-						<li><a ui-sref="">Approved List</a></li>
-						<li><a ui-sref="">Rejected List</a></li>
+						<li><a ui-sref="requsitionApproveList">Approved List</a></li>
+						<li><a ui-sref="requsitionRejectList">Rejected List</a></li>
 					</ul>
 				</li>
 				<li><a ui-sref="purchaseOrder">Purchase Order</a></li>

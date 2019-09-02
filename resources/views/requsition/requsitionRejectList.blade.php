@@ -1,12 +1,12 @@
 <div class="table-head">
 <div class="row" style="position: relative; left: 280px;top: -15px;">
-		<h3 class="head ">Manage Requsitions</h3>
+		<h3 class="head ">Requistion Reject List</h3>
 
 	<div class="row" style="position: relative; left: 425px;top: 15px;">
 		<div class="container">
 			<div class="row">
-				<button ui-sref="allRequsitionList" class="btn btn-warning">
-					All Requsition List
+				<button ui-sref="allRequsitionRejectList" class="btn btn-warning">
+					All List
 					<i class="fa fa-server"></i>
 				</button>
 			</div>	

@@ -169,3 +169,24 @@ Route::get('/accountingReport', function () {
 Route::get('/vendorReport', function () {
 	return view('reports/vendorReport');
 });
+
+Route::get('/allRequsitionList', function () {
+	return view('requsition/allRequsitionList');
+});
+
+Route::get('/requsitionApproveList', function () {
+	return view('requsition/requsitionApproveList');
+});
+
+Route::get('/requsitionRejectList', function () {
+	return view('requsition/requsitionRejectList');
+});
+
+Route::get('/allRequsitionApproveList', function () {
+	return view('requsition/allRequsitionApproveList');
+});
+
+
+Route::get('/allRequsitionRejectList', function () {
+	return view('requsition/allRequsitionRejectList');
+});

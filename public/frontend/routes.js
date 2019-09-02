@@ -705,4 +705,100 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
+    .state('allRequsitionList', {
+        url: "/allRequsitionList",
+        templateUrl: "/allRequsitionList",
+        data: {pageTitle: 'All Requsition List'},
+        controller: "AllRequsitionListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/AllRequsitionListController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+    .state('requsitionApproveList', {
+        url: "/requsitionApproveList",
+        templateUrl: "/requsitionApproveList",
+        data: {pageTitle: 'Requsition Approve List'},
+        controller: "RequsitionApproveListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/RequsitionApproveListController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+    .state('requsitionRejectList', {
+        url: "/requsitionRejectList",
+        templateUrl: "/requsitionRejectList",
+        data: {pageTitle: 'Requsition Reject List'},
+        controller: "RequsitionRejectListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/RequsitionRejectListController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+    .state('allRequsitionApproveList', {
+        url: "/allRequsitionApproveList",
+        templateUrl: "/allRequsitionApproveList",
+        data: {pageTitle: 'All Requsition Approve List'},
+        controller: "AllRequsitionApproveListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/AllRequsitionApproveListController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+    .state('allRequsitionRejectList', {
+        url: "/allRequsitionRejectList",
+        templateUrl: "/allRequsitionRejectList",
+        data: {pageTitle: 'All Requsition Reject List'},
+        controller: "AllRequsitionRejectListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/AllRequsitionRejectListController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+
 }]);
