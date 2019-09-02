@@ -67,10 +67,10 @@ angular.module('ErpApp').controller('PrReleaseStateDetailsController', ['$scope'
 
 		}
 		$scope.getPrStateInfoById();
-		$rootScope.getApproverList1();
+	/*	$rootScope.getApproverList1();
 		$rootScope.getApproverList2();
 		$rootScope.getApproverList3();
-		$rootScope.getApproverList4();
+		$rootScope.getApproverList4();*/
 
 	});
 }]);
