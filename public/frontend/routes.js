@@ -800,5 +800,123 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     })
 
 
+    .state('purchaseOrderList', {
+        url: "/purchaseOrderList",
+        templateUrl: "/purchaseOrderList",
+        data: {pageTitle: 'Purchase Order List'},
+        controller: "PurchaseOrderListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/PurchaseOrderListController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+    .state('allPurchaseOrderList', {
+        url: "/allPurchaseOrderList",
+        templateUrl: "/allPurchaseOrderList",
+        data: {pageTitle: 'All Purchase Order List'},
+        controller: "AllPurchaseOrderListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/AllPurchaseOrderListController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+    .state('purchaseOrderApproveList', {
+        url: "/purchaseOrderApproveList",
+        templateUrl: "/purchaseOrderApproveList",
+        data: {pageTitle: 'Purchase Order Approve List'},
+        controller: "PurchaseOrderApproveListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/PurchaseOrderApproveListController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+    .state('allPurchaseOrderApproveList', {
+        url: "/allPurchaseOrderApproveList",
+        templateUrl: "/allPurchaseOrderApproveList",
+        data: {pageTitle: 'All Purchase Order Approve List'},
+        controller: "AllPurchaseOrderApproveListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/AllPurchaseOrderApproveListController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+    .state('purchaseOrderRejectList', {
+        url: "/purchaseOrderRejectList",
+        templateUrl: "/purchaseOrderRejectList",
+        data: {pageTitle: 'Purchase Order Reject List'},
+        controller: "PurchaseOrderRejectListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/PurchaseOrderRejectListController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+    .state('allPurchaseOrderRejectList', {
+        url: "/allPurchaseOrderRejectList",
+        templateUrl: "/allPurchaseOrderRejectList",
+        data: {pageTitle: 'All Purchase Order Reject List'},
+        controller: "AllPurchaseOrderRejectListController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/AllPurchaseOrderRejectListController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+
+    
+
+
+
+
 
 }]);

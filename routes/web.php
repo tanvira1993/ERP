@@ -66,9 +66,7 @@ Route::get('/vendorList', function () {
 	return view('master/vendorList');
 });
 
-Route::get('/purchaseOrder', function () {
-	return view('purchaseOrder');
-});
+
 
 Route::get('/goodReceive', function () {
 	return view('materialMovement/goodReceive');
@@ -190,3 +188,33 @@ Route::get('/allRequsitionApproveList', function () {
 Route::get('/allRequsitionRejectList', function () {
 	return view('requsition/allRequsitionRejectList');
 });
+
+
+Route::get('/purchaseOrder', function () {
+	return view('purchase/purchaseOrder');
+});
+
+Route::get('/purchaseOrderList', function () {
+	return view('purchase/purchaseOrderList');
+});
+
+Route::get('/allPurchaseOrderList', function () {
+	return view('purchase/allPurchaseOrderList');
+});
+
+Route::get('/purchaseOrderApproveList', function () {
+	return view('purchase/purchaseOrderApproveList');
+});
+
+Route::get('/allPurchaseOrderApproveList', function () {
+	return view('purchase/allPurchaseOrderApproveList');
+});
+
+Route::get('/purchaseOrderRejectList', function () {
+	return view('purchase/purchaseOrderRejectList');
+});
+
+Route::get('/allPurchaseOrderRejectList', function () {
+	return view('purchase/allPurchaseOrderRejectList');
+});
+
