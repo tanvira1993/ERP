@@ -54,7 +54,14 @@
 						<li><a ui-sref="requsitionRejectList">Rejected List</a></li>
 					</ul>
 				</li>
-				<li><a ui-sref="purchaseOrder">Purchase Order</a></li>
+				<li><a ui-sref="">Purchase Order</a>
+					<ul class="submenu">
+						<li><a ui-sref="purchaseOrder">Order</a></li>
+						<li><a ui-sref="purchaseOrderApproveList">Approved List</a></li>
+						<li><a ui-sref="purchaseOrderRejectList">Rejected List</a></li>
+					</ul>
+
+				</li>
 				<li><a href="">Good Movement</a>
 					<ul class="submenu">
 						<li><a ui-sref="goodReceive">Good Recieve</a></li>
