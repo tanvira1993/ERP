@@ -607,7 +607,7 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
 
 
     .state('poReleaseStateDetails', {
-        url: "/poReleaseStateDetails",
+        url: "/poReleaseStateDetails/{id}",
         templateUrl: "/poReleaseStateDetails",
         data: {pageTitle: 'PO Release State Details'},
         controller: "PoReleaseStateDetailsController",

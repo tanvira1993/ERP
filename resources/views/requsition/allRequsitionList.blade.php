@@ -1,9 +1,9 @@
 <div class="table-head">
-<div class="row" style="position: relative; left: 280px;top: -15px;">
+	<div class="row" style="position: relative; left: 280px;top: -15px;">
 		<h3 class="head ">ALL Requsitions</h3>
 
 
-</div>
+	</div>
 
 	<table class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
 		<thead class="thead-dark">
@@ -12,7 +12,7 @@
 				<th class="th-sm" width="19%">Project Name<br/><input ng-model="search.Pname" class="form-control input-sm" ></th>
 				<th class="th-sm"width="19%">Material Name <br/><input ng-model="search.name" class="form-control input-sm" ></th>
 				<th class="th-sm" width="10%">Quantity <br/><input ng-model="search.quantity" class="form-control input-sm" ></th>
-				<th class="th-sm" width="19%">Asset <br/><input ng-model="search.type" class="form-control input-sm" ></th>
+				<th class="th-sm" width="19%">Type <br/><input ng-model="search.type" class="form-control input-sm" ></th>
 				<th class="th-sm" width="24%">Action</th>
 
 			</tr>

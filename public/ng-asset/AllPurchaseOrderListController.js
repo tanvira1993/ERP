@@ -3,5 +3,19 @@ angular.module('ErpApp').controller('AllPurchaseOrderListController', ['$scope',
 	$scope.$on('$viewContentLoaded', function() {
         // initialize core components
         
+        $scope.purchaseOrderList = function(){
+
+        	$http({
+        		method: 'get',
+        		url: 'api/getAllPurchaseOrderLists',
+        	}).then(function (response) {
+        		$scope.purchaseOrderList = response.data.data;
+
+        	}, function (response) {				
+        	});
+
+        }
+        $scope.purchaseOrderList();        
+        
     });
 }]);

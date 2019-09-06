@@ -2,19 +2,6 @@ angular.module('ErpApp').controller('PurchaseOrderListController', ['$scope', '$
 	$scope.$on('$viewContentLoaded', function() {
         // initialize core components
 
-        $scope.purchaseOrderList = function(){
-
-        	$http({
-        		method: 'get',
-        		url: 'api/purchaseOrderList',
-        	}).then(function (response) {
-                $scope.purchaseOrderList = response.data.data;
-
-            }, function (response) {				
-            });
-
-        }
-
         $scope.purchaseOrderListById = function(){
 
         	$http({
@@ -29,6 +16,5 @@ angular.module('ErpApp').controller('PurchaseOrderListController', ['$scope', '$
         }
 
         $scope.purchaseOrderListById();
-        // $scope.purchaseOrderList();        
     });
 }]);

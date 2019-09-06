@@ -83,8 +83,21 @@ Route::post('prApprove/{id}/{id1}/{id2}/{id3}/{id4}', 'PRApprovalController@make
 Route::post('prReject/{id}/{id1}/{id2}/{id3}/{id4}', 'PRApprovalController@makeReject');
 Route::get('getPrRejectListById', 'PRApprovalController@getPRRejectedListById');
 Route::get('getPrAllRejectList', 'PRApprovalController@getPRRejectedList');
+Route::get('purchaseOrderListById', 'PurchaseOrderController@getPurchaseOrderById');
+Route::get('getPOApproverList1', 'POApprovalController@getLevelOneApprovalList');
+Route::get('getPOApproverList2', 'POApprovalController@getLevelTwoApprovalList');
+Route::get('getPOApproverList3', 'POApprovalController@getLevelThreeApprovalList');
+Route::get('getPOApproverList4', 'POApprovalController@getLevelFourApprovalList');
+Route::post('poApprove/{id}/{id1}/{id2}/{id3}/{id4}', 'POApprovalController@makeApprove');
+Route::post('poReject/{id}/{id1}/{id2}/{id3}/{id4}', 'POApprovalController@makeReject');
 
 
+
+Route::get('getPoRejectListById', 'POApprovalController@getPORejectedListById');
+Route::get('getPoRejectList', 'POApprovalController@getPORejectedList');
+Route::get('getPoApprovedListById', 'POApprovalController@getPOApprovedListById');
+Route::get('getPoApprovedList', 'POApprovalController@getPOApprovedList');
+Route::get('getPoStateInfoListById/{id}', 'POApprovalController@getPoStateInfoListById');
 
 
 
