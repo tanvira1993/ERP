@@ -24,12 +24,12 @@
 			<nav class="navbar navbar-light justify-content-center " style="background-color: #D7D2D2;">
 				<a class="navbar-brand" ui-sref="dashboard"><h1 style="font-family:serif;">Inventory & Accounting</h1></a>				
 				<div class="dropdown " style="position: relative; left: 300px;top: -5px;">
-					<a style="cursor: pointer;" class="text-dark navbar-brand dropdown" data-toggle="dropdown"> <span style="font-size:13px">@{{usersInfo.name}}&nbsp; <i class="fa fa-caret-down"></i></span><span class="qty" ng-if="vendorList.length>0">✔️</span></a>
+					<a style="cursor: pointer;" class="text-dark navbar-brand dropdown" data-toggle="dropdown"> <span style="font-size:13px">@{{usersInfo.name}}&nbsp; <i class="fa fa-caret-down"></i></span><span class="qty" ng-if="approverList1.length+ approverList2.length+ approverList3.length+ approverList4.length>0">@{{approverList1.length+ approverList2.length+ approverList3.length+approverList4.length+poApproverList1.length+poApproverList2.length+poApproverList3.length+poApproverList4.length}}</span></a>
 					<ul style="background-color: #D7D2D2;" class=" dropdown-menu" >
 						<li ><a ui-sref="passwordReset">Password Reset</a></li>
 						<li ng-if="idUserRole==0"style="cursor: pointer;"><a ui-sref="adminPasswordReset">Force Reset</a></li>
-						<li style="cursor: pointer;"><a ui-sref="poReleaseApproveState">Approve PO<span class="qty1" ng-if="vendorList.length>0">@{{vendorList.length}}</span></a></li>
-						<li style="cursor: pointer;"><a ui-sref="prReleaseApproveState">Approve PR<span class="qty2" ng-if="vendorList.length>0">@{{vendorList.length}}</span></a></li>			
+						<li style="cursor: pointer;"><a ui-sref="poReleaseApproveState">Approve PO<span class="qty1" ng-if="poApproverList1.length+poApproverList2.length+poApproverList3.length+poApproverList4.length>0">@{{poApproverList1.length+poApproverList2.length+poApproverList3.length+poApproverList4.length}}</span></a></li>
+						<li style="cursor: pointer;"><a ui-sref="prReleaseApproveState">Approve PR<span class="qty2" ng-if="approverList1.length+ approverList2.length+approverList3.length+approverList4.length>0">@{{approverList1.length+ approverList2.length+approverList3.length+approverList4.length}}</span></a></li>			
 						<li style="cursor: pointer;"><a ng-click="logOut()">Logout</a></li>
 
 					</ul>
@@ -88,9 +88,9 @@
 				</li>
 				<li><a href="">Report</a>
 					<ul class="submenu">
-						<li><a ui-sref="vendorReport">Vendor Report</a></li>
+						<!-- <li><a ui-sref="vendorReport">Vendor Report</a></li> -->
 						<li><a ui-sref="materialInventoryReport">Material Inventory</a></li>
-						<li><a ui-sref="projectInventoryReport">Project Inventory</a></li>
+						<!-- <li><a ui-sref="projectInventoryReport">Project Inventory</a></li> -->
 						<li><a ui-sref="accountingReport">Accounting</a></li>
 					</ul>
 				</li>

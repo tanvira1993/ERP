@@ -9,10 +9,10 @@ angular.module('ErpApp').controller('PoReleaseApproveStateController', ['$scope'
 				url: 'api/poApprove/'+ po_id +'/' + l1+'/' + l2+'/' + l3+'/' + l4,
 			}).then(function (response) {
 				toastr.success("PO Approved..!!")
-				$scope.getPOApproverList1();
-				$scope.getPOApproverList2();
-				$scope.getPOApproverList3();
-				$scope.getPOApproverList4();
+				$rootScope.getPOApproverList1();
+				$rootScope.getPOApproverList2();
+				$rootScope.getPOApproverList3();
+				$rootScope.getPOApproverList4();
 				// $window.location.reload();
 			}, function (response) {
 				swal({
@@ -35,10 +35,10 @@ angular.module('ErpApp').controller('PoReleaseApproveStateController', ['$scope'
 				url: 'api/poReject/'+ po_id +'/' + l1+'/' + l2+'/' + l3+'/' + l4,
 			}).then(function (response) {
 				toastr.success("PO Receted..!!")
-				$scope.getPOApproverList1();
-				$scope.getPOApproverList2();
-				$scope.getPOApproverList3();
-				$scope.getPOApproverList4();
+				$rootScope.getPOApproverList1();
+				$rootScope.getPOApproverList2();
+				$rootScope.getPOApproverList3();
+				$rootScope.getPOApproverList4();
 				// $window.location.reload();
 			}, function (response) {
 				swal({
@@ -52,58 +52,12 @@ angular.module('ErpApp').controller('PoReleaseApproveStateController', ['$scope'
 
 		}
 
-		$scope.getPOApproverList1 = function(){
-			$http({
-				method: 'get',
-				url: 'api/getPOApproverList1',
-			}).then(function (response) {
-				$scope.approverList1 = response.data.data;
-			}, function (response) {
 
 
-			});
-		}
-
-		$scope.getPOApproverList2 = function(){
-			$http({
-				method: 'get',
-				url: 'api/getPOApproverList2',
-			}).then(function (response) {
-				$scope.approverList2 = response.data.data;
-			}, function (response) {
-
-
-			});
-		}
-
-		$scope.getPOApproverList3 = function(){
-			$http({
-				method: 'get',
-				url: 'api/getPOApproverList3',
-			}).then(function (response) {
-				$scope.approverList3 = response.data.data;
-			}, function (response) {
-
-
-			});
-		}
-
-		$scope.getPOApproverList4 = function(){
-			$http({
-				method: 'get',
-				url: 'api/getPOApproverList4',
-			}).then(function (response) {
-				$scope.approverList4 = response.data.data;
-			}, function (response) {
-
-
-			});
-		}
-
-		$scope.getPOApproverList1();
-		$scope.getPOApproverList2();
-		$scope.getPOApproverList3();
-		$scope.getPOApproverList4();
+		$rootScope.getPOApproverList1();
+		$rootScope.getPOApproverList2();
+		$rootScope.getPOApproverList3();
+		$rootScope.getPOApproverList4();
 
 
 	});

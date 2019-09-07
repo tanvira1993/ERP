@@ -235,6 +235,54 @@ var ErpApp = angular.module("ErpApp", [
 
  		}
 
+ 		$rootScope.getPOApproverList1 = function(){
+ 			$http({
+ 				method: 'get',
+ 				url: 'api/getPOApproverList1',
+ 			}).then(function (response) {
+ 				$rootScope.poApproverList1 = response.data.data;
+ 			}, function (response) {
+
+
+ 			});
+ 		}
+
+ 		$rootScope.getPOApproverList2 = function(){
+ 			$http({
+ 				method: 'get',
+ 				url: 'api/getPOApproverList2',
+ 			}).then(function (response) {
+ 				$rootScope.poApproverList2 = response.data.data;
+ 			}, function (response) {
+
+
+ 			});
+ 		}
+
+ 		$rootScope.getPOApproverList3 = function(){
+ 			$http({
+ 				method: 'get',
+ 				url: 'api/getPOApproverList3',
+ 			}).then(function (response) {
+ 				$rootScope.poApproverList3 = response.data.data;
+ 			}, function (response) {
+
+
+ 			});
+ 		}
+
+ 		$rootScope.getPOApproverList4 = function(){
+ 			$http({
+ 				method: 'get',
+ 				url: 'api/getPOApproverList4',
+ 			}).then(function (response) {
+ 				$rootScope.poApproverList4 = response.data.data;
+ 			}, function (response) {
+
+
+ 			});
+ 		}
+
  		$rootScope.logOut= function(){
  			window.location.href = 'login/logout/';
  		}
@@ -251,6 +299,11 @@ var ErpApp = angular.module("ErpApp", [
  			$rootScope.getApproverList3();
  			$rootScope.getApproverList4();
  			$rootScope.getPRApprovedList();
+
+ 			$rootScope.getPOApproverList1();
+ 			$rootScope.getPOApproverList2();
+ 			$rootScope.getPOApproverList3();
+ 			$rootScope.getPOApproverList4();
  		}
  		
  	}]);
