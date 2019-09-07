@@ -24,7 +24,7 @@
 			<nav class="navbar navbar-light justify-content-center " style="background-color: #D7D2D2;">
 				<a class="navbar-brand" ui-sref="dashboard"><h1 style="font-family:serif;">Inventory & Accounting</h1></a>				
 				<div class="dropdown " style="position: relative; left: 300px;top: -5px;">
-					<a style="cursor: pointer;" class="text-dark navbar-brand dropdown" data-toggle="dropdown"> <span style="font-size:13px">@{{usersInfo.name}}&nbsp; <i class="fa fa-caret-down"></i></span><span class="qty" ng-if="approverList1.length+ approverList2.length+ approverList3.length+ approverList4.length>0">@{{approverList1.length+ approverList2.length+ approverList3.length+approverList4.length+poApproverList1.length+poApproverList2.length+poApproverList3.length+poApproverList4.length}}</span></a>
+					<a style="cursor: pointer;" class="text-dark navbar-brand dropdown" data-toggle="dropdown"> <span style="font-size:13px">@{{usersInfo.name}}&nbsp; <i class="fa fa-caret-down"></i></span><span class="qty" ng-if="approverList1.length+ approverList2.length+ approverList3.length+ approverList4.length+poApproverList1.length+poApproverList2.length+poApproverList3.length+poApproverList4.length>0">@{{approverList1.length+ approverList2.length+ approverList3.length+approverList4.length+poApproverList1.length+poApproverList2.length+poApproverList3.length+poApproverList4.length}}</span></a>
 					<ul style="background-color: #D7D2D2;" class=" dropdown-menu" >
 						<li ><a ui-sref="passwordReset">Password Reset</a></li>
 						<li ng-if="idUserRole==0"style="cursor: pointer;"><a ui-sref="adminPasswordReset">Force Reset</a></li>

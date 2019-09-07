@@ -1,4 +1,4 @@
-<div class="row table-head" ng-if="approverList1.length<=0 &&  approverList2.length<=0  && approverList3.length<=0  && approverList4.length<=0 ">
+<div class="row table-head" ng-if="poApproverList1.length<=0 &&  poApproverList2.length<=0  && poApproverList3.length<=0  && poApproverList4.length<=0 ">
 	<h5 class="head header-text">PO Approval List Empty</h5>
 
 </div>
