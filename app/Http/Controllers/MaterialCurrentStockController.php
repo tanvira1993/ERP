@@ -22,11 +22,22 @@ use Validator;
 class MaterialCurrentStockController extends Controller
 {
 
-	public function getBankLoanById(Request $request)
+	public function getMaterialReportBasedOnMaterialId(Request $request)
 	{
-		$id=$request->header('idUser');
-		$bankLoan = BankLoans::select('bank_loans.*')->where('user_id', $id)->get();
-		return Response::json(['success' => true, 'data' => $bankLoan], 200);
+		$currentStock = CurrentStock::leftJoin('vendors', 'current_stock.vendor_id', '=', 'vendors.vendor_id')
+		->leftJoin('projects', 'current_stock.project_id', '=', 'projects.project_id')
+		->leftJoin('materials', 'current_stock.material_id', '=', 'materials.material_id')
+		->select('projects.name AS Pname', 'materials.*','vendors.name AS vname','current_stock.*')
+		->get();
+		return Response::json(['success' => true, 'data' => $currentStock], 200);
 	}
+
+	/*public function getMaterialReportBasedOnProjectId(Request $request, $id)
+	{
+		$currentStock = CurrentStock::select('current_stock.*')
+		->where('project_id', $id)
+		->get();
+		return Response::json(['success' => true, 'data' => $currentStock], 200);
+	}*/
 
 }

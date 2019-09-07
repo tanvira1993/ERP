@@ -98,6 +98,9 @@ Route::get('getPoRejectList', 'POApprovalController@getPORejectedList');
 Route::get('getPoApprovedListById', 'POApprovalController@getPOApprovedListById');
 Route::get('getPoApprovedList', 'POApprovalController@getPOApprovedList');
 Route::get('getPoStateInfoListById/{id}', 'POApprovalController@getPoStateInfoListById');
+Route::get('materialReportBasedOnMaterial', 'MaterialCurrentStockController@getMaterialReportBasedOnMaterialId');
+Route::get('materialReportBasedOnProject', 'MaterialCurrentStockController@getMaterialReportBasedOnProjectId');
+
 
 
 
