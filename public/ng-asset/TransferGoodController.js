@@ -4,15 +4,15 @@ angular.module('ErpApp').controller('TransferGoodController', ['$scope', '$rootS
         // initialize core components
 
         const initSelect2Dropdown = function () {
-		$timeout(function () {
-			$(".select2dropdown").select2({
-				placeholder: null,
-				width: '100%'
-			});
-		}, 500);
-	} 
+        	$timeout(function () {
+        		$(".select2dropdown").select2({
+        			placeholder: null,
+        			width: '100%'
+        		});
+        	}, 500);
+        } 
 
-	$scope.createTransferGood = function(){
+        $scope.createTransferGood = function(){
 
         	toastr.info("'info', 'Loading!', 'Please wait.'")
         	$http({
@@ -34,7 +34,23 @@ angular.module('ErpApp').controller('TransferGoodController', ['$scope', '$rootS
 
         }
 
-	initSelect2Dropdown();   
+        $rootScope.getAllProjectListByLeader = function(){
+
+            $http({
+                method: 'get',
+                url: 'api/getEmployer',
+            }).then(function (response) {
+                $rootScope.getEmployer = response.data.data;
+
+            }, function (response) {
+
+
+            });
+
+        }
+
+        initSelect2Dropdown();   
+        $rootScope.getAllProjectListByLeader();
 
         
     });

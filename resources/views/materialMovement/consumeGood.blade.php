@@ -1,17 +1,25 @@
 <div class="row">
 	<h3 class="head header-text">Consume Good</h3>
+	<div style="margin-top: 50px;margin-left: 300px" class="container">
+		<div class="row">
+			<button ui-sref="vendorReport" class="btn btn-warning">
+				Consume List All
+				<i class="fa fa-server"></i>
+			</button>
+		</div>	
+	</div>
+	
 </div>
-
 
 <div>
 	<form id="consumeGood-form" name="consumeGoodForm" novalidate>
 		<div class="row">
 			<div class="label-design">
-				<label for="idProject">Select Project</label>
+				<label for="idProject">Select Employee</label>
 			</div>
 			<div class="col-75">				
 				<select name="idProject" ng-model="consumeGoodInfo.idProject" class="form-control select2dropdown">
-					<option value="">Select Project</option>
+					<option value="">Select Employee</option>
 					<option ng-repeat="(key, value) in projectList" value="@{{value.project_id}}">@{{value.name}}</option>
 				</select>
 			</div>
@@ -47,18 +55,9 @@
 			<input type="submit" ng-click="createConsumeGood()" value="Issue">
 		</div>
 	</form>
-	<!-- <div class="row" style="position: relative; left: 470px;top: -360px;">
-		<div class="container">
-			<div class="row">
-				<button ui-sref="consumeGoodList" class="btn btn-warning">
-					 Consume Good List
-					<i class="fa fa-server"></i>
-				</button>
-			</div>	
-		</div>
-	</div> -->
-	<pre>
+
+	<!-- <pre>
 		@{{consumeGoodInfo|json}}
-	</pre>
+	</pre> -->
 </div>
 

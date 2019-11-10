@@ -23,13 +23,15 @@ class MasterDataController extends Controller
 			'name' => 'required| min:3|unique:projects,name',			
 			'location' => 'required',
 			'desc' => 'required',
+			'type' => 'required'
 		];
 
 		$messages = [
 			'name.required' => 'Name is required!',
 			'name.unique' => 'This Project already created.',			
 			'location.required' => 'Project Location is required!',
-			'desc.required' => 'Description is required!',	
+			'desc.required' => 'Description is required!',
+			'type.required' => 'Select Employee Type'	
 
 		];
 
@@ -50,6 +52,7 @@ class MasterDataController extends Controller
 			$project->name = $request->name;
 			$project->location = $request->location;
 			$project->description = $request->desc;
+			$project->employee_role = $request->type;
 			$project->user_id = $id;
 
 			
@@ -77,6 +80,12 @@ class MasterDataController extends Controller
 	public function getAllProjectLists()
 	{
 		$projects = Projects::select('projects.*')->get();
+		return Response::json(['success' => true, 'data' => $projects], 200);
+	}
+
+	public function getAllProjectListsByLeader()
+	{
+		$projects = Projects::select('projects.*')->where('employee_role',1) ->get();
 		return Response::json(['success' => true, 'data' => $projects], 200);
 	}
 

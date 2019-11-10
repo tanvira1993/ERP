@@ -3,19 +3,19 @@ angular.module('ErpApp').controller('ProjectInventoryReportController', ['$scope
 	$scope.$on('$viewContentLoaded', function() {
 		
 		
-		$scope.materialReportBasedOnProject = function(){
+		$scope.getAllGoodReceiveLists = function(){
 
 			$http({
 				method: 'get',
-				url: 'api/materialReportBasedOnProject',
+				url: 'api/getAllGoodReceiveLists',
 			}).then(function (response) {
-				$scope.materialReportOnProject = response.data.data;
+				$scope.goodReceiveLists = response.data.data;
 
 			}, function (response) {				
 			});
 
 		}
-		$scope.materialReportBasedOnProject();
+		$scope.getAllGoodReceiveLists();
 
 	});
 }]);

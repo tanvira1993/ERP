@@ -36,8 +36,8 @@ Route::post('createPurchaseOrder', 'PurchaseOrderController@savePurchaseOrder');
 Route::get('getAllPurchaseOrderLists', 'PurchaseOrderController@getAllPurchaseOrderLists');
 Route::get('getPurchaseOrderById', 'PurchaseOrderController@getPurchaseOrderById');
 Route::post('createGoodReceive', 'GoodReceiveController@saveGoodReceive');
-Route::get('getAllGoodReceiveLists', 'PurchaseOrderController@getAllGoodReceiveLists');
-Route::get('getGoodReceiveById', 'PurchaseOrderController@getGoodReceiveById');
+Route::get('getAllGoodReceiveLists', 'GoodReceiveController@getAllGoodReceiveLists');
+Route::get('getGoodReceiveById', 'GoodReceiveController@getGoodReceiveById');
 Route::post('createConsumeGood', 'ConsumeGoodController@saveConsumeGood');
 Route::get('getAllConsumeGoodLists', 'ConsumeGoodController@getAllConsumeGoodLists');
 Route::get('getConsumeGoodById', 'ConsumeGoodController@getConsumeGoodById');
@@ -103,7 +103,8 @@ Route::get('materialReportBasedOnProject', 'MaterialCurrentStockController@getMa
 
 
 
-
+Route::get('getEmployer','MasterDataController@getAllProjectListsByLeader');
+Route::get('getRejectGoodsLists','RejectGoodController@getRejectGoodsLists');
 
 
 

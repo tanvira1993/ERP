@@ -1,13 +1,13 @@
 <div class="table-head">
-	<h3 class="head ">Manage Projects</h3>
+	<h3 class="head ">Manage Employees </h3>
 
 	<table class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
 		<thead class="thead-dark">
 			<tr>
 				<th class="th-sm" width="10%">SN <br/><input ng-model="search.project_id" class="form-control input-sm" ></th>
-				<th class="th-sm" width="22%">Project Name<br/><input ng-model="search.name" class="form-control input-sm" ></th>
-				<th class="th-sm"width="22%">Project Location <br/><input ng-model="search.location" class="form-control input-sm" ></th>
-				<th class="th-sm" width="22%">Project Description <br/><input ng-model="search.description" class="form-control input-sm" ></th>
+				<th class="th-sm" width="22%">Employee Name<br/><input ng-model="search.name" class="form-control input-sm" ></th>
+				<th class="th-sm"width="22%">Phone Number <br/><input ng-model="search.location" class="form-control input-sm" ></th>
+				<th class="th-sm" width="22%">Designation <br/><input ng-model="search.description" class="form-control input-sm" ></th>
 
 				<th class="th-sm" width="24%">Action</th>
 

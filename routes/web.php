@@ -157,15 +157,15 @@ Route::get('/materialInventoryReport', function () {
 });
 
 Route::get('/projectInventoryReport', function () {
-	return view('reports/projectInventoryReport');
+	return view('reports/goodReceiveReport');
 });
 
 Route::get('/accountingReport', function () {
-	return view('reports/accountingReport');
+	return view('reports/scrapReport');
 });
 
 Route::get('/vendorReport', function () {
-	return view('reports/vendorReport');
+	return view('reports/consumeReport');
 });
 
 Route::get('/allRequsitionList', function () {

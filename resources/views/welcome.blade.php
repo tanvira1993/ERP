@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>ERP</title>
+	<title>E-Inventory</title>
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -22,14 +22,14 @@
 	<div ng-if="token!=null && idUser!=null	&& idUserRole!=null">
 		<div>
 			<nav class="navbar navbar-light justify-content-center " style="background-color: #D7D2D2;">
-				<a class="navbar-brand" ui-sref="dashboard"><h1 style="font-family:serif;">Inventory & Accounting</h1></a>				
+				<a class="navbar-brand" ui-sref="dashboard"><h1 style="font-family:serif;">Employee Inventory </h1></a>				
 				<div class="dropdown " style="position: relative; left: 300px;top: -5px;">
 					<a style="cursor: pointer;" class="text-dark navbar-brand dropdown" data-toggle="dropdown"> <span style="font-size:13px">@{{usersInfo.name}}&nbsp; <i class="fa fa-caret-down"></i></span><span class="qty" ng-if="approverList1.length+ approverList2.length+ approverList3.length+ approverList4.length+poApproverList1.length+poApproverList2.length+poApproverList3.length+poApproverList4.length>0">@{{approverList1.length+ approverList2.length+ approverList3.length+approverList4.length+poApproverList1.length+poApproverList2.length+poApproverList3.length+poApproverList4.length}}</span></a>
 					<ul style="background-color: #D7D2D2;" class=" dropdown-menu" >
-						<li ><a ui-sref="passwordReset">Password Reset</a></li>
-						<li ng-if="idUserRole==0"style="cursor: pointer;"><a ui-sref="adminPasswordReset">Force Reset</a></li>
-						<li style="cursor: pointer;"><a ui-sref="poReleaseApproveState">Approve PO<span class="qty1" ng-if="poApproverList1.length+poApproverList2.length+poApproverList3.length+poApproverList4.length>0">@{{poApproverList1.length+poApproverList2.length+poApproverList3.length+poApproverList4.length}}</span></a></li>
-						<li style="cursor: pointer;"><a ui-sref="prReleaseApproveState">Approve PR<span class="qty2" ng-if="approverList1.length+ approverList2.length+approverList3.length+approverList4.length>0">@{{approverList1.length+ approverList2.length+approverList3.length+approverList4.length}}</span></a></li>			
+						<li ><a ui-sref="passwordReset">Change Password</a></li>
+						<li ng-if="idUserRole==0"style="cursor: pointer;"><a ui-sref="adminPasswordReset">Admin Reset</a></li>
+						<!-- <li style="cursor: pointer;"><a ui-sref="poReleaseApproveState">Approve PO<span class="qty1" ng-if="poApproverList1.length+poApproverList2.length+poApproverList3.length+poApproverList4.length>0">@{{poApproverList1.length+poApproverList2.length+poApproverList3.length+poApproverList4.length}}</span></a></li> -->
+						<!-- <li style="cursor: pointer;"><a ui-sref="prReleaseApproveState">Approve PR<span class="qty2" ng-if="approverList1.length+ approverList2.length+approverList3.length+approverList4.length>0">@{{approverList1.length+ approverList2.length+approverList3.length+approverList4.length}}</span></a></li>	 -->		
 						<li style="cursor: pointer;"><a ng-click="logOut()">Logout</a></li>
 
 					</ul>
@@ -42,35 +42,35 @@
 				<li><a href="">Master Data</a>
 					<ul class="submenu">
 						<li><a ui-sref="vendor">Vendor</a></li>
-						<li><a ui-sref="customer">Customer</a></li>
-						<li><a ui-sref="project">Project</a></li>
+						<!-- <li><a ui-sref="customer">Customer</a></li> -->
+						<li><a ui-sref="project">Employee</a></li>
 						<li><a ui-sref="material">Metarial</a></li>
 					</ul>
 				</li>
-				<li><a href="">Requsition</a>
+				<!-- <li><a href="">Requsition</a>
 					<ul class="submenu">
 						<li><a ui-sref="requsition">Raise</a></li>
 						<li><a ui-sref="requsitionApproveList">Approved List</a></li>
 						<li><a ui-sref="requsitionRejectList">Rejected List</a></li>
 					</ul>
-				</li>
-				<li><a ui-sref="">Purchase Order</a>
+				</li> -->
+				<!-- <li><a ui-sref="">Purchase Order</a>
 					<ul class="submenu">
 						<li><a ui-sref="purchaseOrder">Order</a></li>
 						<li><a ui-sref="purchaseOrderApproveList">Approved List</a></li>
 						<li><a ui-sref="purchaseOrderRejectList">Rejected List</a></li>
 					</ul>
 
-				</li>
+				</li> -->
 				<li><a href="">Good Movement</a>
 					<ul class="submenu">
 						<li><a ui-sref="goodReceive">Good Recieve</a></li>
 						<li><a ui-sref="consumeGood">Consume Good</a></li>
 						<li><a ui-sref="transferGood">Transfer Good</a></li>
-						<li><a ui-sref="rejectGood">Reject Good</a></li>					
+						<li><a ui-sref="rejectGood">Scrap Good</a></li>					
 					</ul>
 				</li>
-				<li><a href="">Accounting Posting</a>
+				<!-- <li><a href="">Accounting Posting</a>
 					<ul class="submenu">
 						<li><a href="">Bill Post</a></li>
 						<li><a ui-sref="utilityBillPost">Utility Bill Post</a></li>
@@ -79,29 +79,29 @@
 						<li><a ui-sref="advancePayment">Advance Payment</a></li>
 						<li><a ui-sref="labourCost">Labour Cost</a></li>
 					</ul>
-				</li>
-				<li><a href="">Sells</a>
+				</li> -->
+				<!-- <li><a href="">Sells</a>
 					<ul class="submenu">
 						<li><a ui-sref="goodSell">Good Sell</a></li>
 						<li><a ui-sref="projectSell">Project Sell</a></li>
 					</ul>
-				</li>
+				</li> -->
 				<li><a href="">Report</a>
 					<ul class="submenu">
 						<!-- <li><a ui-sref="vendorReport">Vendor Report</a></li> -->
-						<li><a ui-sref="materialInventoryReport">Material Inventory</a></li>
+						<li><a ui-sref="materialInventoryReport">Inventory Report</a></li>
 						<!-- <li><a ui-sref="projectInventoryReport">Project Inventory</a></li> -->
-						<li><a ui-sref="accountingReport">Accounting</a></li>
+						<!-- <li><a ui-sref="accountingReport">Accounting</a></li> -->
 					</ul>
 				</li>
-				<li><a href="">Approval Setting</a>
+				<!-- <li><a href="">Approval Setting</a>
 
 					<ul class="submenu">
 						<li><a ui-sref="documentType">Dcument Type</a></li>
 						<li><a ui-sref="release">Release Strategy</a></li>
 						
 					</ul>
-				</li>
+				</li> -->
 				
 			</ul>
 		</nav>
@@ -111,7 +111,7 @@
 		</div>
 	</div>
 
-	<div ng-if="token==null || idUser==null	|| idUserRole==null" style="background-color:powderblue;">
+	<div ng-if="token==null || idUser==null	|| idUserRole==null" style="background-color:'#DDDD';">
 		<div class="login-page">
 			<div class="form">
 				<h1 style="font-family:serif;">Login</h1>
@@ -131,7 +131,7 @@
 	
 
 	<div ng-if="token!=null && idUser!=null	&& idUserRole!=null" class="footer">
-		<p>Footer</p>
+		<p style="font-family:serif;">Employee Inventory <a href="http://tomagroup.com.bd/" target='_blank'title="©Toma Group">©Toma Group</a></p>
 	</div>
 	<script src="frontend/jquery.min.js" type="text/javascript"></script>
 	<script src="frontend/angular.min.js"></script>

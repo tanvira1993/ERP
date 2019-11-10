@@ -70,8 +70,8 @@
 			</div>	
 		</div>
 	</div>
-	<pre>
+	<!-- <pre>
 		@{{vendorInfo|json}}
-	</pre>
+	</pre> -->
 </div>
 

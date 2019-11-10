@@ -4,15 +4,15 @@ angular.module('ErpApp').controller('GoodReceiveController', ['$scope', '$rootSc
         // initialize core components
 
         const initSelect2Dropdown = function () {
-		$timeout(function () {
-			$(".select2dropdown").select2({
-				placeholder: null,
-				width: '100%'
-			});
-		}, 500);
-	} 
+        	$timeout(function () {
+        		$(".select2dropdown").select2({
+        			placeholder: null,
+        			width: '100%'
+        		});
+        	}, 500);
+        } 
 
-	$scope.createGoodReceive = function(){
+        $scope.createGoodReceive = function(){
 
         	toastr.info("'info', 'Loading!', 'Please wait.'")
         	$http({
@@ -34,8 +34,26 @@ angular.module('ErpApp').controller('GoodReceiveController', ['$scope', '$rootSc
 
         }
 
-	initSelect2Dropdown();   
 
-        
+
+        $rootScope.getAllProjectListByLeader = function(){
+
+        	$http({
+        		method: 'get',
+        		url: 'api/getEmployer',
+        	}).then(function (response) {
+        		$rootScope.getEmployer = response.data.data;
+
+        	}, function (response) {
+
+
+        	});
+
+        }
+        $rootScope.getAllProjectListByLeader();
+
+        initSelect2Dropdown();   
+
+
     });
 }]);

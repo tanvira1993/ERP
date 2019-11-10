@@ -35,7 +35,7 @@ class RejectGoodController extends Controller
 		];
 
 		$messages = [
-			'idProject.required' => 'Project is required!',
+			'idProject.required' => 'Employee is required!',
 			'idMaterial.required' => 'Material is required!',
 			'idVendor.required' => 'Vendor is required!',
 			'quantity.required' => 'Quantity is required!',

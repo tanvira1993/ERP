@@ -51,8 +51,8 @@
 			</div>	
 		</div>
 	</div>
-	<pre>
+	<!-- <pre>
 		@{{materialInfo|json}}
-	</pre>
+	</pre> -->
 </div>
 

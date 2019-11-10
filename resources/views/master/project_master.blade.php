@@ -1,5 +1,5 @@
 <div class="row">
-	<h3 class="head header-text">Project Creation</h3>
+	<h3 class="head header-text">Employee Creation</h3>
 </div>
 
 
@@ -7,7 +7,7 @@
 	<form id="project-form" name="projectForm" novalidate>
 		<div class="row">
 			<div class="label-design">
-				<label for="name">Project Name</label>
+				<label for="name">Employee Name</label>
 			</div>
 			<div class="col-75">				
 				<input type="text" name="name" ng-model="projectInfo.name" placeholder="">
@@ -16,19 +16,33 @@
 
 		<div class="row">  
 			<div class="label-design">
-				<label for="location">Project Location</label>
+				<label for="location">Mobile</label>
 			</div>     
 			<div class="col-75">				        
-				<input type="text"  name="location" ng-model="projectInfo.location" placeholder="">
+				<input type="number"  name="location" ng-model="projectInfo.location" placeholder="">
 			</div>
 		</div>
 
 		<div class="row">  
 			<div class="label-design">
-				<label for="desc">Description</label>
+				<label for="desc">Designation</label>
 			</div>     
 			<div class="col-75">				        
 				<input type="text"  name="desc" ng-model="projectInfo.desc" placeholder="">
+			</div>
+		</div>
+
+		<div class="row">  
+			<div class="label-design">
+				<label for="type">Employee Type</label>
+			</div>     
+			<div class="col-75">				        
+				<select name="type" ng-model="projectInfo.type" class="form-control">
+					<option value="">Select Type</option>
+					<option value=1>Employer</option>
+					<option value=0>Employee</option>
+					
+				</select>
 			</div>
 		</div>
 
@@ -40,7 +54,7 @@
 		<div class="container">
 			<div class="row">
 				<button ui-sref="projectList" class="btn btn-warning">
-					Project List
+					Employee List
 					<i class="fa fa-server"></i>
 				</button>
 			</div>	

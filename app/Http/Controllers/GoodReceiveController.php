@@ -60,13 +60,27 @@ class GoodReceiveController extends Controller
 			$goodReceive->price = $request->price;
 			$goodReceive->user_id = $id;
 
-			$stockUpdate = new CurrentStock;
-			$stockUpdate->project_id = $request->idProject;
-			$stockUpdate->material_id = $request->idMaterial;
-			$stockUpdate->vendor_id = $request->idVendor;
-			$stockUpdate->quantity = $request->quantity;
-			$stockUpdate->price = $request->price;
-			$stockUpdate->user_id = $id;
+			$stockDataS=CurrentStock::select('current_stock.*')
+			->where('project_id',$request->idProject)
+			->where('material_id',$request->idMaterial)
+			->first(); 
+
+			if( $stockDataS == null){
+				$stockUpdate = new CurrentStock;
+				$stockUpdate->project_id = $request->idProject;
+				$stockUpdate->material_id = $request->idMaterial;
+				$stockUpdate->vendor_id = $request->idVendor;
+				$stockUpdate->quantity = $request->quantity;
+				$stockUpdate->price = $request->price;
+				$stockUpdate->user_id = $id;
+			}
+
+			else{
+				$stockUpdate = CurrentStock:: find($stockDataS->current_stock_id);
+				$stockUpdate->quantity = $stockDataS->quantity+$request->quantity;
+			}
+
+			
 			
 			if(($goodReceive->save()) && ($stockUpdate->save())){
 				DB::commit();

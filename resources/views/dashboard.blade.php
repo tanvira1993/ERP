@@ -1,1 +1,1 @@
-  <img style="padding-top: 04%" src="frontend/pic.png">
+  <img style="padding: 04%" src="frontend/pic.png">

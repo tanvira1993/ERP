@@ -1,5 +1,13 @@
 <div class="row">
-	<h3 class="head header-text">Reject Good</h3>
+	<h3 class="head header-text">Scrap Good</h3>
+	<div style="margin-top: 50px;margin-left: 300px" class="container">
+		<div class="row">
+			<button ui-sref="accountingReport" class="btn btn-warning">
+				Scrap List All
+				<i class="fa fa-server"></i>
+			</button>
+		</div>	
+	</div>
 </div>
 
 
@@ -7,11 +15,11 @@
 	<form id="rejectGood-form" name="rejectGoodForm" novalidate>
 		<div class="row">
 			<div class="label-design">
-				<label for="idProject">Select Project</label>
+				<label for="idProject">Select Employee</label>
 			</div>
 			<div class="col-75">				
 				<select name="idProject" ng-model="rejectGoodInfo.idProject" class="form-control select2dropdown">
-					<option value="">Select Project</option>
+					<option value="">Select Employee</option>
 					<option ng-repeat="(key, value) in projectList" value="@{{value.project_id}}">@{{value.name}}</option>
 				</select>
 			</div>
@@ -30,7 +38,7 @@
 		</div>
 
 
-				<div class="row">  
+		<div class="row">  
 			<div class="label-design">
 				<label for="idVendor">Select Vendor</label>
 			</div>     
@@ -74,7 +82,7 @@
 		
 
 		<div class="row submit-design">
-			<input type="submit" ng-click="createRejectGood()" value="Reject">
+			<input type="submit" ng-click="createRejectGood()" value="Scrap">
 		</div>
 	</form>
 <!-- 	<div class="row" style="position: relative; left: 470px;top: -360px;">
@@ -87,8 +95,8 @@
 			</div>	
 		</div>
 	</div> -->
-	<pre>
+	<!-- <pre>
 		@{{rejectGoodInfo|json}}
-	</pre>
+	</pre> -->
 </div>
 

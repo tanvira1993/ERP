@@ -11,7 +11,7 @@ angular.module('ErpApp').controller('ProjectController', ['$scope', '$rootScope'
         		data:$scope.projectInfo
         	}).then(function (response) {
         		$scope.projectInfo=null;
-        		toastr.success("Project Created..!!")         		       		
+        		toastr.success("Employee Created..!!")         		       		
         	}, function (response) {
         		swal({
         			title: response.data.heading,
@@ -19,7 +19,7 @@ angular.module('ErpApp').controller('ProjectController', ['$scope', '$rootScope'
         			html:true,
         			type: 'error'
         		}); 
-        		toastr.error("Project could not be Created!!")
+        		toastr.error("Employee could not be Created!!")
         	});
 
         }

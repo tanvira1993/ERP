@@ -7,12 +7,12 @@
 	<form id="transferGood-form" name="transferGoodForm" novalidate>
 		<div class="row">
 			<div class="label-design">
-				<label for="idProjectS"> Select Supply Project</label>
+				<label for="idProjectS">  Employer</label>
 			</div>
 			<div class="col-75">				
 				<select name="idProjectS" ng-model="transferGoodInfo.idProjectS" class="form-control select2dropdown">
-					<option value="">Select Project</option>
-					<option ng-repeat="(key, value) in projectList" value="@{{value.project_id}}">@{{value.name}}</option>
+					<option value="">Select Employer</option>
+					<option ng-repeat="(key, value) in getEmployer" value="@{{value.project_id}}">@{{value.name}}</option>
 				</select>
 			</div>
 		</div>
@@ -20,11 +20,11 @@
 
 		<div class="row">
 			<div class="label-design">
-				<label for="idProjectR"> Select Receive Project</label>
+				<label for="idProjectR"> Select Employee</label>
 			</div>
 			<div class="col-75">				
 				<select name="idProjectR" ng-model="transferGoodInfo.idProjectR" class="form-control select2dropdown">
-					<option value="">Select Project</option>
+					<option value="">Select Employee</option>
 					<option ng-repeat="(key, value) in projectList" value="@{{value.project_id}}">@{{value.name}}</option>
 				</select>
 			</div>
@@ -80,8 +80,8 @@
 			</div>	
 		</div>
 	</div> -->
-	<pre>
+	<!-- <pre>
 		@{{transferGoodInfo|json}}
-	</pre>
+	</pre> -->
 </div>
 
