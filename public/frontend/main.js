@@ -1,6 +1,7 @@
 var ErpApp = angular.module("ErpApp", [
 	"ui.router",	
 	"oc.lazyLoad",
+	// "ui.bootstrap",
 	]);
 
 /********************************************
@@ -42,8 +43,33 @@ var ErpApp = angular.module("ErpApp", [
  /* Setup App Main Controller */
  ErpApp.controller('AppController', ['$scope', '$rootScope', '$location', '$timeout', '$http','$stateParams','$window',function($scope, $rootScope, $location, $timeout, $http,$stateParams,$window) {
  	$scope.$on('$viewContentLoaded', function() {
+ 			///////// pagenation practice
+ 			/*$scope.filteredTodos = []
+ 			,$scope.currentPage = 1
+ 			,$scope.numPerPage = 10
+ 			,$scope.maxSize = 5;*/
 
- 	});
+ 			/*$scope.makeTodos = function() {
+ 				$scope.todos = [];
+ 				for (i=1;i<=1000;i++) {
+ 					$scope.todos.push({ text:'todo '+i, done:false});
+ 				}
+ 			};
+ 			$scope.makeTodos(); */
+
+ 			/*$scope.numPages = function () {
+ 				return Math.ceil($scope.todos.length / $scope.numPerPage);
+ 			};
+
+ 			$scope.$watch('currentPage + numPerPage', function() {
+ 				var begin = (($scope.currentPage - 1) * $scope.numPerPage)
+ 				, end = begin + $scope.numPerPage;
+
+ 				$scope.filteredTodos = $scope.todos.slice(begin, end);
+ 			}*/
+
+ 			////////
+ 		});
  }]);
 
  /* Setup App run functions*/
@@ -83,7 +109,7 @@ var ErpApp = angular.module("ErpApp", [
  					$rootScope.idUser = localStorage.getItem('idUser');
  					$rootScope.idUserRole= localStorage.getItem('idUserRole');
  					toastr.success("Login Success..!!")
- 					
+
  					$window.location.reload();
  					$location.path('/dashboard');
  				}, function(response) {
@@ -153,7 +179,7 @@ var ErpApp = angular.module("ErpApp", [
 
  			});
  		}
- 		
+
  		$rootScope.getApproverList2 = function(){
  			$http({
  				method: 'get',
@@ -219,7 +245,7 @@ var ErpApp = angular.module("ErpApp", [
  			});
 
  		}
- 		
+
  		$rootScope.getPRApprovedList = function(){
 
  			$http({
@@ -305,5 +331,5 @@ var ErpApp = angular.module("ErpApp", [
  			$rootScope.getPOApproverList3();
  			$rootScope.getPOApproverList4();
  		}
- 		
+
  	}]);

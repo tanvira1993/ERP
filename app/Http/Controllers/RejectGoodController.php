@@ -113,7 +113,11 @@ class RejectGoodController extends Controller
 
 	public function getRejectGoodsLists()
 	{
-		$rejectGood = RejectGoods::select('reject_goods.*')->get();
+		$rejectGood = RejectGoods::leftJoin('projects', 'reject_goods.project_id', '=', 'projects.project_id')
+		->leftJoin('materials', 'reject_goods.material_id', '=', 'materials.material_id')
+		->leftJoin('vendors', 'reject_goods.vendor_id', '=', 'vendors.vendor_id')
+		->select('projects.name AS Ename', 'vendors.name AS vname','materials.*','reject_goods.*') 
+		->get();
 		return Response::json(['success' => true, 'data' => $rejectGood], 200);
 	}
 

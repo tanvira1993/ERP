@@ -912,8 +912,82 @@ ErpApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
         }
     })
 
+    
+    .state('refund', {
+        url: "/refund",
+        templateUrl: "/refund",
+        data: {pageTitle: 'Refund Good'},
+        controller: "RefundController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/RefundController.js'
+                    ]
+                });
+            }]
+        }
+    })
 
     
+
+
+
+    .state('stockReport', {
+        url: "/stockReport",
+        templateUrl: "/stockReport",
+        data: {pageTitle: 'Stock Report Print'},
+        controller: "StockReportController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/StockReportController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
+    .state('scrapReport', {
+        url: "/scrapReport",
+        templateUrl: "/scrapReport",
+        data: {pageTitle: 'Scrap Report Print'},
+        controller: "ScrapReportController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/ScrapReportController.js'
+                    ]
+                });
+            }]
+        }
+    })
+    
+    .state('materialReport', {
+        url: "/materialReport",
+        templateUrl: "/materialReport",
+        data: {pageTitle: 'Material Report Print'},
+        controller: "MaterialReportController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'ErpApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/MaterialReportController.js'
+                    ]
+                });
+            }]
+        }
+    })
 
 
 

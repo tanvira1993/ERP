@@ -106,7 +106,10 @@ class ConsumeGoodController extends Controller
 	
 	public function getAllConsumeGoodLists()
 	{
-		$consumeGood = ConsumeMaterials::select('consume_materials.*')->get();
+		$consumeGood = ConsumeMaterials::leftJoin('projects', 'consume_materials.project_id', '=', 'projects.project_id')
+		->leftJoin('materials', 'consume_materials.material_id', '=', 'materials.material_id')	
+		->select('projects.name AS Ename', 'materials.*','consume_materials.*') 
+		->get();
 		return Response::json(['success' => true, 'data' => $consumeGood], 200);
 	}
 

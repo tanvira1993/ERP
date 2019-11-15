@@ -107,12 +107,13 @@ Route::get('getEmployer','MasterDataController@getAllProjectListsByLeader');
 Route::get('getRejectGoodsLists','RejectGoodController@getRejectGoodsLists');
 
 
+Route::post('createRefund', 'RefundController@saveRefund');
 
+Route::get('getEmployerOrEmployeeList/{id}', 'MaterialCurrentStockController@getEmployerOrEmployeeList');
 
+Route::get ('singleStockReport/{id}', 'MaterialCurrentStockController@getSingleStockReport');
 
-
-
-
+// Route::get ('stockReportGenerate/{id}', 'MaterialCurrentStockController@getSingleStockReport');
 
 
 

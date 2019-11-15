@@ -72,6 +72,10 @@ Route::get('/goodReceive', function () {
 	return view('materialMovement/goodReceive');
 });
 
+Route::get('/refund', function () {
+	return view('materialMovement/refund');
+});
+
 Route::get('/consumeGood', function () {
 	return view('materialMovement/consumeGood');
 });
@@ -110,6 +114,15 @@ Route::get('/labourCost', function () {
 
 Route::get('/rejectGood', function () {
 	return view('materialMovement/rejectGood');
+});
+
+
+
+Route::get('/stockReport', function () {
+	return view('reportPrint/stockReport');
+});
+Route::get('/scrapReport', function () {
+	return view('reportPrint/scrapReport');
 });
 
 
@@ -217,4 +230,29 @@ Route::get('/purchaseOrderRejectList', function () {
 Route::get('/allPurchaseOrderRejectList', function () {
 	return view('purchase/allPurchaseOrderRejectList');
 });
+
+
+
+
+Route::get('/stockReportGenerate', function () {
+	return view('reportPrint/generate');
+});
+
+Route::get ('stockReportGenerate/{id}', 'MaterialCurrentStockController@getSingleStockReport');
+
+Route::get('/scrapReportGenerate', function () {
+	return view('reportPrint/scrap');
+});
+Route::get ('scrapReportGenerate/{id}', 'MaterialCurrentStockController@getCompanyScrapReport');
+
+Route::get('/materialReport', function () {
+	return view('reportPrint/materialReport');
+});
+
+Route::get('/materialReportGenerate', function () {
+	return view('reportPrint/materialAll');
+});
+
+Route::get ('materialReportGenerate/{id}', 'MaterialCurrentStockController@getMaterialReport');
+
 

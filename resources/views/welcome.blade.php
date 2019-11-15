@@ -65,9 +65,10 @@
 				<li><a href="">Good Movement</a>
 					<ul class="submenu">
 						<li><a ui-sref="goodReceive">Good Recieve</a></li>
+						<li><a ui-sref="transferGood">Transfer Good</a></li>					
 						<li><a ui-sref="consumeGood">Consume Good</a></li>
-						<li><a ui-sref="transferGood">Transfer Good</a></li>
 						<li><a ui-sref="rejectGood">Scrap Good</a></li>					
+						<li><a ui-sref="refund">Refund</a></li>					
 					</ul>
 				</li>
 				<!-- <li><a href="">Accounting Posting</a>
@@ -86,12 +87,16 @@
 						<li><a ui-sref="projectSell">Project Sell</a></li>
 					</ul>
 				</li> -->
-				<li><a href="">Report</a>
+				<li><a href="">Reports</a>
 					<ul class="submenu">
 						<!-- <li><a ui-sref="vendorReport">Vendor Report</a></li> -->
 						<li><a ui-sref="materialInventoryReport">Inventory Report</a></li>
 						<!-- <li><a ui-sref="projectInventoryReport">Project Inventory</a></li> -->
 						<!-- <li><a ui-sref="accountingReport">Accounting</a></li> -->
+						<li><a ui-sref="stockReport">Stock Report</a></li>
+						<li><a ui-sref="scrapReport">Scrap Report</a></li>
+						<li><a ui-sref="materialReport">Material Report</a></li>
+						
 					</ul>
 				</li>
 				<!-- <li><a href="">Approval Setting</a>
@@ -144,6 +149,13 @@
 	<script src="frontend/bootstrap.min.js"></script>
 	<script src="frontend/sweetalert.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
+
+	<!-- Pagination Practice -->
+
+	<!-- <link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+	<script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+	<script data-require="angular-ui-bootstrap@0.3.0" data-semver="0.3.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.min.js"></script> -->
+	<!-- Pagination Practice -->
 
 </body>
 </html>

@@ -105,7 +105,11 @@ class GoodReceiveController extends Controller
 	
 	public function getAllGoodReceiveLists()
 	{
-		$goodReceive = GoodReceives::select('gr.*')->get();
+		$goodReceive = GoodReceives::leftJoin('projects', 'gr.project_id', '=', 'projects.project_id')
+		->leftJoin('materials', 'gr.material_id', '=', 'materials.material_id')
+		->leftJoin('vendors', 'gr.vendor_id', '=', 'vendors.vendor_id')
+		->select('projects.name AS Ename', 'vendors.name AS vname','materials.*','gr.*') 
+		->get();
 		return Response::json(['success' => true, 'data' => $goodReceive], 200);
 	}
 
