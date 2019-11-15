@@ -1,4 +1,4 @@
-
+<link data-require="bootstrap-css@*" data-semver="3.3.1" rel="stylesheet" href="bootstrap.min.css" />
 <div class="table-head">
 	<h3 class="head ">Stock In Reports</h3>
 
@@ -27,10 +27,12 @@
 	</table> 
 </div>
 
-<!--  -->
-<!-- <div data-pagination="" data-num-pages="numPages()" 
-data-current-page="currentPage" data-max-size="maxSize"  
-data-boundary-links="true"></div> -->
+<pagination 
+ng-model="currentPage1"
+total-items="goodReceiveLists.length"
+max-size="maxSize"  
+boundary-links="true">
+</pagination>
 
 
 

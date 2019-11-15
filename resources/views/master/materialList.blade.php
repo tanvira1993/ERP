@@ -1,3 +1,4 @@
+<!-- <link rel="stylesheet" href="bootstrap.min.css" /> -->
 <div class="table-head">
 	<h3 class="head ">Manage Materials</h3>
 
@@ -14,16 +15,18 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="(key, value) in materialList | filter:{material_id: search.material_id, name: search.name, type: search.type, descriptions: search.descriptions}">
+			<tr ng-repeat="(key, value) in materialListLocal | filter:{material_id: search.material_id, name: search.name, type: search.type, descriptions: search.descriptions}">
 				<td>@{{value.material_id}}</td>
 				<td>@{{value.name}}</td>
 				<td>@{{value.type}}</td>			
 				<td>@{{value.descriptions}}</td>			
-				<td> <button type="button" class="btn btn-default" aria-label="Left Align">
+				<!-- <td> <button type="button" class="btn btn-default" aria-label="Left Align">
 					<span class="fa fa-edit fa-lg" aria-hidden="true">&nbsp;Edit</span>
 				</button> <button type="button" class="btn btn-default" aria-label="Left Align">
 					<span class="fa fa-trash-o fa-lg" aria-hidden="true">&nbsp;Delete</span>
-				</button></td>
+				</button></td> -->
+				<td>Coming Soon...</td>				
+				<!-- <td>@{{filteredTodos.length}}</td>				 -->
 			</tr>
 		</tbody>
 	</table> 

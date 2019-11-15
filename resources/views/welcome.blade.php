@@ -7,6 +7,7 @@
 	<title>E-Inventory</title>
 
 	<!-- Fonts -->
+	<!-- <link rel="stylesheet" href="bootstrap.min.css" /> -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 	<link rel="stylesheet" href="frontend/bootstrap.min.css">
 	<link rel="stylesheet" href="frontend/test.css">
@@ -147,15 +148,11 @@
 	<script src="frontend/toastr.min.js" type="text/javascript"></script>
 	<script src="frontend/popper.min.js"></script>
 	<script src="frontend/bootstrap.min.js"></script>
+	<!-- <script src="bootstrap.min.js"></script> -->
 	<script src="frontend/sweetalert.min.js"></script>
+	<script data-require="ui-bootstrap@*" data-semver="0.12.1" src="frontend/ui-bootstrap-tpls-0.12.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
 
-	<!-- Pagination Practice -->
-
-	<!-- <link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
-	<script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
-	<script data-require="angular-ui-bootstrap@0.3.0" data-semver="0.3.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.min.js"></script> -->
-	<!-- Pagination Practice -->
 
 </body>
 </html>
