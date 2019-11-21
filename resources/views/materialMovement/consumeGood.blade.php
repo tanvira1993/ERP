@@ -32,7 +32,7 @@
 			<div class="col-75">				        
 				<select name="idMaterial" ng-model="consumeGoodInfo.idMaterial" class="form-control select2dropdown">
 					<option value="">Select Material</option>
-					<option ng-repeat="(key, value) in materialList" value="@{{value.material_id}}">@{{value.name}}</option>
+					<option ng-repeat="(key, value) in consumeMaterialList" value="@{{value.material_id}}">@{{value.name}}</option>
 				</select>
 			</div>
 		</div>

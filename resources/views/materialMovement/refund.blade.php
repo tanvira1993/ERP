@@ -71,7 +71,7 @@
 		</div>
 	</div> -->
 	<pre>
-		@{{transferGoodInfo|json}}
+		<!-- @{{transferGoodInfo|json}} -->
 	</pre>
 </div>
 

@@ -18,7 +18,8 @@
 			<tr ng-repeat="(key, value) in consumeLists | filter:{name: search.name, type: search.type, quantity: search.quantity, Ename: search.Ename,created_at: search.created_at}">
 				<td>@{{key+1}}</td>
 				<td>@{{value.name}}</td>
-				<td>@{{value.type}}</td>			
+				<td ng-if="value.type=='Asset'">Consume</td>			
+				<td ng-if="value.type=='Normal'">Scrap</td>					
 				<td>@{{value.quantity}}</td>			
 				<td>@{{value.Ename}}</td>
 				<td>@{{value.created_at}}</td>

@@ -87,6 +87,24 @@ padding:0in 5.4pt 0in 5.4pt;height:15.75pt'>
 text-align:center;line-height:normal'><span style='font-size:12.0pt'>Stock Qty.</span></p>
 </td>
 
+<td width=250  style='width:73.45pt;border:none;border-right:solid 1.0pt;
+padding:0in 5.4pt 0in 5.4pt;height:15.75pt'>
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:12.0pt'>AVG Cost</span></p>
+</td>
+
+<td width=250  style='width:73.45pt;border:none;border-right:solid 1.0pt;
+padding:0in 5.4pt 0in 5.4pt;height:15.75pt'>
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:12.0pt'>Total Cost</span></p>
+</td>
+
+<td width=250  style='width:73.45pt;border:none;border-right:solid 1.0pt;
+padding:0in 5.4pt 0in 5.4pt;height:15.75pt'>
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:12.0pt'>Company Stock</span></p>
+</td>
+
 <td style='height:15.75pt;border:none' width=0 height=21></td>
 </tr>
 
@@ -121,6 +139,25 @@ text-align:center;line-height:normal'><span style='font-size:12.0pt'>Stock Qty.<
 			<span style='font-size:12.0pt'><?php if($result['current']!=null){echo $result['current'][0]->q ;} else{ echo 0;}?></span>
 		</p>
 	</td>
+
+	<td width=150  style='width:73.45pt;border:solid 1.0pt;border-left: none;padding:0in 5.4pt 0in 5.4pt;height:15.75pt'>
+		<p class=MsoNormal align=right style='margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal'>
+			<span style='font-size:12.0pt'><?php if($result['price']!=null){echo $result['price'][0]->ppp ;} else{ echo 0;}?></span>
+		</p>
+	</td>
+
+	<td width=150  style='width:73.45pt;border:solid 1.0pt;border-left: none;padding:0in 5.4pt 0in 5.4pt;height:15.75pt'>
+		<p class=MsoNormal align=right style='margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal'>
+			<span style='font-size:12.0pt'><?php if($result['price']!=null){echo $result['price'][0]->total ;} else{ echo 0;}?></span>
+		</p>
+	</td>
+
+	<td width=150  style='width:73.45pt;border:solid 1.0pt;border-left: none;padding:0in 5.4pt 0in 5.4pt;height:15.75pt'>
+		<p class=MsoNormal align=right style='margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal'>
+			<span style='font-size:12.0pt'><?php if($result['companyStock']!=null){echo $result['companyStock'][0]->quantity ;} else{ echo 0;}?></span>
+		</p>
+	</td>
+
 
 
 

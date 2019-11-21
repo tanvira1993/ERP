@@ -28,18 +28,18 @@ class RejectGoodController extends Controller
 		$rules = [
 			'idProject' => 'required |numeric',
 			'idMaterial' => 'required |numeric',
-			'idVendor' => 'required | numeric',
+			// 'idVendor' => 'required | numeric',
 			'quantity' => 'required |numeric',
-			'price' => 'required |numeric',
+			// 'price' => 'required |numeric',
 			'remarks' => 'required',
 		];
 
 		$messages = [
 			'idProject.required' => 'Employee is required!',
 			'idMaterial.required' => 'Material is required!',
-			'idVendor.required' => 'Vendor is required!',
+			// 'idVendor.required' => 'Vendor is required!',
 			'quantity.required' => 'Quantity is required!',
-			'price.required' => 'Price is required!',
+			// 'price.required' => 'Price is required!',
 			'remarks.required' => 'Remarks is required!',			
 
 		];
@@ -60,9 +60,9 @@ class RejectGoodController extends Controller
 			$rejectGood = new RejectGoods;
 			$rejectGood->project_id = $request->idProject;
 			$rejectGood->material_id = $request->idMaterial;
-			$rejectGood->vendor_id = $request->idVendor;
+			// $rejectGood->vendor_id = $request->idVendor;
 			$rejectGood->quantity = $request->quantity;
-			$rejectGood->price = $request->price;
+			// $rejectGood->price = $request->price;
 			$rejectGood->remarks = $request->remarks;
 			$rejectGood->user_id = $id;
 

@@ -21,8 +21,8 @@
 			<div class="col-75">				        
 				<select name="type" ng-model="materialInfo.type" class="form-control">
 					<option value="">Select Type</option>
-					<option value="Asset">Asset</option>
-					<option value="Normal">Normal</option>
+					<option value="Asset">Consume</option>
+					<option value="Normal">Scrap</option>
 					
 				</select>
 			</div>

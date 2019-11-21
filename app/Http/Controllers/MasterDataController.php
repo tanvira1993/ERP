@@ -28,7 +28,7 @@ class MasterDataController extends Controller
 
 		$messages = [
 			'name.required' => 'Name is required!',
-			'name.unique' => 'This Project already created.',			
+			'name.unique' => ' Already created.',			
 			'location.required' => 'Project Location is required!',
 			'desc.required' => 'Description is required!',
 			'type.required' => 'Select Employee Type'	
@@ -79,7 +79,7 @@ class MasterDataController extends Controller
 	
 	public function getAllProjectLists()
 	{
-		$projects = Projects::select('projects.*')->get();
+		$projects = Projects::select('projects.*')->where('employee_role',0)->get();
 		return Response::json(['success' => true, 'data' => $projects], 200);
 	}
 
@@ -149,6 +149,17 @@ class MasterDataController extends Controller
 	public function getAllMaterialLists()
 	{
 		$material = Materials::select('materials.*')->get();
+		return Response::json(['success' => true, 'data' => $material], 200);
+	}
+
+	public function getAllMaterialListsByConsume()
+	{
+		$material = Materials::select('materials.*')->where('type','Asset')->get();
+		return Response::json(['success' => true, 'data' => $material], 200);
+	}
+	public function getAllMaterialListsByScrap()
+	{
+		$material = Materials::select('materials.*')->where('type','Normal')->get();
 		return Response::json(['success' => true, 'data' => $material], 200);
 	}
 

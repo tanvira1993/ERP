@@ -4,15 +4,15 @@ angular.module('ErpApp').controller('RejectGoodController', ['$scope', '$rootSco
         // initialize core components
 
         const initSelect2Dropdown = function () {
-		$timeout(function () {
-			$(".select2dropdown").select2({
-				placeholder: null,
-				width: '100%'
-			});
-		}, 500);
-	} 
+        	$timeout(function () {
+        		$(".select2dropdown").select2({
+        			placeholder: null,
+        			width: '100%'
+        		});
+        	}, 500);
+        } 
 
-	$scope.createRejectGood = function(){
+        $scope.createRejectGood = function(){
 
         	toastr.info("'info', 'Loading!', 'Please wait.'")
         	$http({
@@ -34,8 +34,22 @@ angular.module('ErpApp').controller('RejectGoodController', ['$scope', '$rootSco
 
         }
 
-	initSelect2Dropdown();   
+        $scope.rejectMaterialList = function(){
 
-        
+        	$http({
+        		method: 'get',
+        		url: 'api/getMaterialListByScrap',
+        	}).then(function (response) {
+        		$scope.rejectMaterialList = response.data.data;
+
+        	}, function (response) {                
+        	});
+
+        }
+        $scope.rejectMaterialList();
+
+        initSelect2Dropdown();   
+
+
     });
 }]);

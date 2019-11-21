@@ -18,7 +18,8 @@
 			<tr ng-repeat="(key, value) in materialListLocal | filter:{material_id: search.material_id, name: search.name, type: search.type, descriptions: search.descriptions}">
 				<td>@{{value.material_id}}</td>
 				<td>@{{value.name}}</td>
-				<td>@{{value.type}}</td>			
+				<td ng-if="value.type=='Asset'">Consume</td>			
+				<td ng-if="value.type=='Normal'">Scrap</td>			
 				<td>@{{value.descriptions}}</td>			
 				<!-- <td> <button type="button" class="btn btn-default" aria-label="Left Align">
 					<span class="fa fa-edit fa-lg" aria-hidden="true">&nbsp;Edit</span>

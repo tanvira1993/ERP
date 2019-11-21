@@ -115,6 +115,8 @@ Route::get ('singleStockReport/{id}', 'MaterialCurrentStockController@getSingleS
 
 // Route::get ('stockReportGenerate/{id}', 'MaterialCurrentStockController@getSingleStockReport');
 
+Route::get('getMaterialListByConsume','MasterDataController@getAllMaterialListsByConsume');
+Route::get('getMaterialListByScrap','MasterDataController@getAllMaterialListsByScrap');
 
 
 

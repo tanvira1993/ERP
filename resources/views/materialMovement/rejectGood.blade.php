@@ -32,13 +32,13 @@
 			<div class="col-75">				        
 				<select name="idMaterial" ng-model="rejectGoodInfo.idMaterial" class="form-control select2dropdown">
 					<option value="">Select Material</option>
-					<option ng-repeat="(key, value) in materialList" value="@{{value.material_id}}">@{{value.name}}</option>
+					<option ng-repeat="(key, value) in rejectMaterialList" value="@{{value.material_id}}">@{{value.name}}</option>
 				</select>
 			</div>
 		</div>
 
 
-		<div class="row">  
+		<!-- <div class="row">  
 			<div class="label-design">
 				<label for="idVendor">Select Vendor</label>
 			</div>     
@@ -49,7 +49,7 @@
 				</select>
 			</div>
 		</div>
-
+ -->
 		
 		<div class="row">  
 			<div class="label-design">
@@ -60,14 +60,14 @@
 			</div>
 		</div>
 
-		<div class="row">  
+		<!-- <div class="row">  
 			<div class="label-design">
 				<label for="price">Price</label>
 			</div>     
 			<div class="col-75">				        
 				<input type="number"  name="price" ng-model="rejectGoodInfo.price" placeholder="">
 			</div>
-		</div>
+		</div> -->
 
 
 		<div class="row">  

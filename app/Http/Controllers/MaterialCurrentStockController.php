@@ -95,7 +95,15 @@ class MaterialCurrentStockController extends Controller
 				FROM materials d INNER JOIN gr e ON d.material_id=e.material_id	
 				WHERE e.material_id=$id GROUP BY d.material_id,d.name"));
 
-			$material['result']=(compact("current","consume","scrap","allRcv"));
+			$price = DB::select(DB::raw("SELECT d.material_id,SUM(d.quantity) AS q,AVG(d.price) AS ppp, SUM(d.quantity)*AVG(d.price) AS total
+				FROM gr d 
+				WHERE d.material_id=$id GROUP BY d.material_id"));
+
+			$companyStock = DB::select(DB::raw("SELECT d.material_id, d.quantity
+				FROM current_stock d 
+				WHERE d.material_id=$id"));
+
+			$material['result']=(compact("current","consume","scrap","allRcv","price","companyStock"));
 			
 			return view('reportPrint/materialAll',$material);
 
