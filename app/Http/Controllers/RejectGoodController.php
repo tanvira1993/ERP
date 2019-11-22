@@ -103,9 +103,9 @@ class RejectGoodController extends Controller
 		}
 
 		catch (\Exception $e) {
-			echo $e;
+			// echo $e;
 			DB::rollback();
-			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Reject Good could can not be done!'), 400);
+			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Could can not be Done!'), 400);
 		}	
 
 	}

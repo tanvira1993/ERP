@@ -37,6 +37,7 @@
 <pagination 
 ng-model="currentPage"
 total-items="projectListLocal.length"
+items-per-page="numPerPage"
 max-size="maxSize"  
 boundary-links="true">
 </pagination>

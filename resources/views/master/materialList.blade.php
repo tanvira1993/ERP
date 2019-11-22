@@ -1,3 +1,4 @@
+<link data-require="bootstrap-css@*" data-semver="3.3.1" rel="stylesheet" href="bootstrap.min.css" />
 <!-- <link rel="stylesheet" href="bootstrap.min.css" /> -->
 <div class="table-head">
 	<h3 class="head ">Manage Materials</h3>
@@ -15,7 +16,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="(key, value) in materialListLocal | filter:{material_id: search.material_id, name: search.name, type: search.type, descriptions: search.descriptions}">
+			<tr ng-repeat="(key, value) in filteredTodosM | filter:{material_id: search.material_id, name: search.name, type: search.type, descriptions: search.descriptions}">
 				<td>@{{value.material_id}}</td>
 				<td>@{{value.name}}</td>
 				<td ng-if="value.type=='Asset'">Consume</td>			
@@ -34,5 +35,11 @@
 </div>
 
 
-
+<pagination 
+ng-model="currentPageM"
+total-items="materialListLocal.length"
+items-per-page="numPerPageM"
+max-size="maxSizeM"  
+boundary-links="true">
+</pagination>
 <!-- <a ng-href="#!/editCategory/@{{value.id_categories}}" class="btn btn-primary"> Edit</a> -->

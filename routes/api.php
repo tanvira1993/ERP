@@ -120,7 +120,7 @@ Route::get('getMaterialListByScrap','MasterDataController@getAllMaterialListsByS
 
 
 
-
+Route::delete('deleteGoodReceiveSingleHistory/{id}','GoodReceiveController@deleteGoodReceiveSingleHistory');
 
 
 

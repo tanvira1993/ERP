@@ -295,16 +295,16 @@ var ErpApp = angular.module("ErpApp", [
  			$rootScope.getAllProjectList();
  			$rootScope.getAllMaterialList();
  			$rootScope.getUserIdById();
- 			$rootScope.getApproverList1();
- 			$rootScope.getApproverList2();
- 			$rootScope.getApproverList3();
- 			$rootScope.getApproverList4();
- 			$rootScope.getPRApprovedList();
+ 			// $rootScope.getApproverList1();
+ 			// $rootScope.getApproverList2();
+ 			// $rootScope.getApproverList3();
+ 			// $rootScope.getApproverList4();
+ 			// $rootScope.getPRApprovedList();
 
- 			$rootScope.getPOApproverList1();
- 			$rootScope.getPOApproverList2();
- 			$rootScope.getPOApproverList3();
- 			$rootScope.getPOApproverList4();
+ 			// $rootScope.getPOApproverList1();
+ 			// $rootScope.getPOApproverList2();
+ 			// $rootScope.getPOApproverList3();
+ 			// $rootScope.getPOApproverList4();
  		}
 
  	}]);

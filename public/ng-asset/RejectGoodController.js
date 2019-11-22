@@ -29,7 +29,7 @@ angular.module('ErpApp').controller('RejectGoodController', ['$scope', '$rootSco
         			html:true,
         			type: 'error'
         		}); 
-        		toastr.error("Good Rejected could not be Done!!")
+        		toastr.error("Could not be Done!!")
         	});
 
         }

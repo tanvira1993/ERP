@@ -1,4 +1,4 @@
-
+<link data-require="bootstrap-css@*" data-semver="3.3.1" rel="stylesheet" href="bootstrap.min.css" />
 <div class="table-head">
 	<h3 class="head ">Consume Reports</h3>
 
@@ -15,7 +15,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="(key, value) in consumeLists | filter:{name: search.name, type: search.type, quantity: search.quantity, Ename: search.Ename,created_at: search.created_at}">
+			<tr ng-repeat="(key, value) in filteredTodosG | filter:{name: search.name, type: search.type, quantity: search.quantity, Ename: search.Ename,created_at: search.created_at}">
 				<td>@{{key+1}}</td>
 				<td>@{{value.name}}</td>
 				<td ng-if="value.type=='Asset'">Consume</td>			
@@ -28,6 +28,13 @@
 	</table> 
 </div>
 
+<pagination 
+ng-model="currentPageG"
+total-items="consumeLists.length"
+max-size="maxSizeG"  
+items-per-page="numPerPageG"
+boundary-links="true">
+</pagination>
 
 
 <!-- <a ng-href="#!/editCategory/@{{value.id_categories}}" class="btn btn-primary"> Edit</a> -->

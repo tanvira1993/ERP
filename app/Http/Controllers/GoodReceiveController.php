@@ -120,4 +120,36 @@ class GoodReceiveController extends Controller
 		return Response::json(['success' => true, 'data' => $goodReceive], 200);
 	}
 
+	public function deleteGoodReceiveSingleHistory ($id){
+		$goodReceiveCheck= GoodReceives::select('gr.*')->where('gr_id',$id)->first();
+		$currentStockOut =CurrentStock:: select('current_stock.*')
+		->where('project_id',$goodReceiveCheck->project_id)
+		->where('material_id',$goodReceiveCheck->material_id)
+		->first();
+		if($currentStockOut->quantity>=$goodReceiveCheck->quantity){
+			$stockReverse = CurrentStock:: find($currentStockOut->current_stock_id);
+			$stockReverse->quantity = $currentStockOut->quantity-$goodReceiveCheck->quantity;
+
+			if($stockReverse->save()){
+				DB::commit();			
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Transaction Could can not be Deleted!'), 400);
+			}
+
+			$goodReceiveDelete = GoodReceives::where('gr_id',$id)->first();
+			$goodReceiveDelete->delete();
+			return Response::json(['success' => true, 'data' => $goodReceiveDelete], 200);
+
+		}
+
+		else{
+			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Sorry!!! You Made a Mistake.'), 400);
+		}
+		
+	}
+
 }

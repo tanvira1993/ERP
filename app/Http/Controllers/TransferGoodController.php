@@ -137,7 +137,7 @@ class TransferGoodController extends Controller
 		}
 
 		catch (\Exception $e) {
-			echo $e;
+			// echo $e;
 			DB::rollback();
 			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Transfer Good could can not be transferred!'), 400);
 		}	
